@@ -2,114 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Cornerstones Vision Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cornerstones Vision Academy | Home</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* --- General --- */
-    body { margin:0; font-family: Arial, sans-serif; }
-    nav { background:#004080; color:#fff; padding:15px; text-align:center; position:sticky; top:0; z-index:1000; }
-    nav a { color:#fff; margin:0 15px; text-decoration:none; font-weight:bold; }
-    
-    /* --- Hero Slider --- */
-    #hero { position:relative; height:100vh; overflow:hidden; }
-    .hero-slide { position:absolute; width:100%; height:100%; background-size:cover; background-position:center; display:flex; justify-content:center; align-items:center; color:#fff; font-size:3em; text-shadow:2px 2px 8px #000; opacity:0; transition:opacity 1s ease-in-out; }
-    .hero-slide::before { content:""; position:absolute; width:100%; height:100%; background:rgba(0,0,0,0.5); top:0; left:0; z-index:1; }
-    .hero-slide h2 { position:relative; z-index:2; }
+    /* Hero Slider */
+    #hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+    }
 
-    .hero-slide.active { opacity:1; z-index:2; }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
 
-    /* --- Sections --- */
-    .section { padding:80px 20px; text-align:center; }
-    .section h2 { font-size:2em; margin-bottom:20px; }
-    .btn { background:#004080; color:#fff; padding:10px 20px; text-decoration:none; border-radius:5px; margin-top:10px; display:inline-block; }
+    .slide.active { opacity: 1; z-index: 2; }
 
-    /* --- Footer --- */
-    footer { background:#222; color:#fff; padding:20px; text-align:center; }
-    .social a { margin:0 10px; text-decoration:none; font-size:1.5em; color:#fff; }
+    .slide::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      top:0;
+      left:0;
+      z-index:1;
+    }
+
+    .slide-content {
+      position: relative;
+      z-index:2;
+      max-width: 800px;
+    }
+
+    .slide-content h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .slide-content p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      background: #004080;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn:hover { background: #0066cc; }
+
+    /* Social media icons placeholder */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      color: #fff;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover { color: #ffcc00; }
   </style>
 </head>
 <body>
 
-<!-- Navigation -->
-<nav>
-  <a href="#about">About</a>
-  <a href="#academics">Academics</a>
-  <a href="#admissions">Admissions</a>
-  <a href="#school-life">School Life</a>
-  <a href="#bulletin">CVA Bulletin</a>
-</nav>
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="academics.html">Academics</a>
+    <div style="display:inline-block; position:relative;">
+      <a href="school-life/events.html">School Life &#x25BE;</a>
+      <div style="display:none; position:absolute; background:#004080; margin-top:5px; border-radius:5px;" class="dropdown">
+        <a href="school-life/events.html" style="display:block; padding:10px; color:#fff;">Events</a>
+        <a href="school-life/clubs-activities.html" style="display:block; padding:10px; color:#fff;">Clubs & Activities</a>
+        <a href="school-life/gallery.html" style="display:block; padding:10px; color:#fff;">Gallery</a>
+      </div>
+    </div>
+    <a href="CVA-Bulletin/celebrating-culture-and-creativity.html">CVA Bulletin</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-<!-- Hero Slider -->
-<div id="hero">
-  <div class="hero-slide active" style="background-image:url('images/slide1.jpg');"><h2>School Building</h2></div>
-  <div class="hero-slide" style="background-image:url('images/slide2.jpg');"><h2>Staff</h2></div>
-  <div class="hero-slide" style="background-image:url('images/slide3.jpg');"><h2>Primary Students</h2></div>
-  <div class="hero-slide" style="background-image:url('images/slide4.jpg');"><h2>Secondary Students</h2></div>
-  <div class="hero-slide" style="background-image:url('images/slide5.jpg');"><h2>Events</h2></div>
-  <div class="hero-slide" style="background-image:url('images/slide6.jpg');"><h2>Cultural Activities</h2></div>
-</div>
+  <!-- Hero Slider -->
+  <section id="hero">
+    <div class="slide active" style="background-image: url('images/slide1.jpg');">
+      <div class="slide-content">
+        <h2>Welcome to Cornerstones Vision Academy</h2>
+        <p>Nurturing Creativity, Leadership & Excellence</p>
+        <a href="about.html" class="btn">Read More</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide2.jpg');">
+      <div class="slide-content">
+        <h2>Our Dedicated Staff</h2>
+        <p>Committed to Excellence in Teaching and Mentorship</p>
+        <a href="about.html" class="btn">Read More</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide3.jpg');">
+      <div class="slide-content">
+        <h2>Primary Students Learning</h2>
+        <p>Fostering Curiosity and Creativity from the Start</p>
+        <a href="academics.html" class="btn">Read More</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide4.jpg');">
+      <div class="slide-content">
+        <h2>Secondary Students Activities</h2>
+        <p>Developing Skills for Tomorrow’s Leaders</p>
+        <a href="academics.html" class="btn">Read More</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide5.jpg');">
+      <div class="slide-content">
+        <h2>School Events & Competitions</h2>
+        <p>Celebrating Achievements Across All Fields</p>
+        <a href="school-life/events.html" class="btn">Read More</a>
+      </div>
+    </div>
+    <div class="slide" style="background-image: url('images/slide6.jpg');">
+      <div class="slide-content">
+        <h2>Cultural Programs</h2>
+        <p>Preserving Heritage and Creativity in Every Student</p>
+        <a href="school-life/events.html" class="btn">Read More</a>
+      </div>
+    </div>
+  </section>
 
-<!-- About Section -->
-<div id="about" class="section">
-  <h2>About Cornerstones Vision Academy</h2>
-  <p>Discover our school, vision, and leadership approach.</p>
-  <a href="about/our-school.html" class="btn">Read More →</a>
-</div>
-
-<!-- Academics Section -->
-<div id="academics" class="section">
-  <h2>Academics</h2>
-  <p>Explore Primary and Secondary School programs.</p>
-  <a href="academics/primary.html" class="btn">Read More →</a>
-</div>
-
-<!-- Admissions Section -->
-<div id="admissions" class="section">
-  <h2>Admissions</h2>
-  <p>Learn how to apply, view fees, and download forms.</p>
-  <a href="admissions/how-to-apply.html" class="btn">Read More →</a>
-</div>
-
-<!-- School Life Section -->
-<div id="school-life" class="section">
-  <h2>School Life</h2>
-  <p>Events, clubs, and gallery to explore student life.</p>
-  <a href="school-life/events.html" class="btn">Read More →</a>
-</div>
-
-<!-- CVA Bulletin Section -->
-<div id="bulletin" class="section">
-  <h2>CVA Bulletin</h2>
-  <p>Read our latest news and articles from the school.</p>
-  <a href="CVA-Bulletin/celebrating-culture-and-creativity.html" class="btn">Read More →</a>
-</div>
-
-<!-- Footer -->
-<footer>
-  <p>Follow us on social media:</p>
-  <div class="social">
-    <a href="#"><!-- Facebook Icon Placeholder --></a>
-    <a href="#"><!-- Twitter Icon Placeholder --></a>
-    <a href="#"><!-- Instagram Icon Placeholder --></a>
+  <!-- Social Media Icons -->
+  <div class="social-icons">
+    <a href="#" title="Facebook">FB</a>
+    <a href="#" title="Twitter">TW</a>
+    <a href="#" title="Instagram">IG</a>
+    <a href="#" title="YouTube">YT</a>
   </div>
-  <p>&copy; 2026 Cornerstones Vision Academy</p>
-</footer>
 
-<!-- Hero Slider Script -->
-<script>
-const slides = document.querySelectorAll('.hero-slide');
-let current = 0;
-function showSlide(index) {
-  slides.forEach((slide, i) => {
-    slide.classList.remove('active');
-    if(i === index) slide.classList.add('active');
-  });
-}
-setInterval(()=>{
-  current = (current+1)%slides.length;
-  showSlide(current);
-},5000);
-</script>
+  <!-- Hero Slider Script -->
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  </script>
 
 </body>
 </html>
