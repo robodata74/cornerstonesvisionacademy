@@ -2,11 +2,68 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gallery - CVA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Cornerstones Vision Academy</title>
   <link rel="stylesheet" href="../css/style.css">
+
+  <style>
+    .hero {
+      height: 60vh;
+      background: url('../images/gallery-hero.jpg') center/cover no-repeat;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3rem;
+    }
+
+    .gallery {
+      max-width: 1200px;
+      margin: 60px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Gallery</h1>
-  <p>Placeholder page for CVA photo and video gallery.</p>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>School Gallery</h1>
+  </section>
+
+  <!-- Gallery Grid -->
+  <section class="gallery">
+    <img src="../images/gallery-1.jpg" alt="School Campus">
+    <img src="../images/gallery-2.jpg" alt="Teachers and Staff">
+    <img src="../images/gallery-3.jpg" alt="Primary Students">
+    <img src="../images/gallery-4.jpg" alt="Secondary Students">
+    <img src="../images/gallery-5.jpg" alt="Cultural Event">
+    <img src="../images/gallery-6.jpg" alt="Sports Day">
+  </section>
+
 </body>
 </html>
