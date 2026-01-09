@@ -2,11 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Events - CVA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>School Events - CVA</title>
   <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* Section-specific styling */
+    .hero-section {
+      position: relative;
+      height: 60vh;
+      background: url('../images/events-hero.jpg') center center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      top:0;
+      left:0;
+    }
+
+    .hero-section h1 {
+      position: relative;
+      z-index: 1;
+      font-size: 3em;
+      margin: 0;
+    }
+
+    .section-content {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 0 20px;
+    }
+
+    .section-content h2 {
+      color: #004080;
+      font-size: 2em;
+      margin-bottom: 15px;
+    }
+
+    .section-content p {
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+
+    .video-container {
+      max-width: 800px;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 450px;
+      border: 0;
+    }
+
+  </style>
 </head>
 <body>
-  <h1>Events</h1>
-  <p>Placeholder page for CVA school events and cultural activities.</p>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>School Events & Culture</h1>
+  </section>
+
+  <!-- Main Content -->
+  <section class="section-content">
+    <h2>Our Events</h2>
+    <p>Cornerstones Vision Academy (CVA) hosts a variety of events throughout the academic year to celebrate student creativity, cultural heritage, and academic achievements. These include drama festivals, musical performances, folk dance exhibitions, and more.</p>
+
+    <h2>Event & Culture Video</h2>
+    <div class="video-container">
+      <iframe
+        src="https://www.youtube.com/embed/bobV7Su2Log"
+        title="CVA Event & Culture Video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    </div>
+
+    <p>Through these events, CVA encourages students to explore their talents, work collaboratively, and develop confidence. Participation in interschool competitions and cultural activities reinforces the importance of teamwork, creativity, and community engagement.</p>
+    
+    <p>We regularly update our events and cultural highlights in our <a href="../CVA-Bulletin/celebrating-culture-and-creativity.html" class="btn">CVA Bulletin</a> for parents, students, and staff.</p>
+
+  </section>
+
 </body>
 </html>
