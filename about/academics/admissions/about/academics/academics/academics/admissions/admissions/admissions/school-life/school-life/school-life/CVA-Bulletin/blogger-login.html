@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogger Registration & Login | CVA Bulletin</title>
+  <meta name="description" content="Register or login as a blogger to submit articles for CVA Bulletin. Pending admin approval.">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-xh6giXnN0PZ6rG0sHqv+YtN2J9bFzU1xZzU3Qz1pY1Jq7nYH2M1uM6k0yM7G6P+5A5M5x5x5x5x==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- ================= NAVIGATION ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo"><a href="../index.html">Cornerstones Vision Academy</a></div>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../academics.html">Academics</a></li>
+        <li class="dropdown">
+          <a href="#">School Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="../school-life/events.html">Events</a></li>
+            <li><a href="../school-life/clubs-activities.html">Clubs & Activities</a></li>
+            <li><a href="../school-life/gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html" class="active">CVA Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero-article" style="background-image: url('../images/blogger-hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Blogger Registration & Login</h1>
+      <p>Submit your articles to CVA Bulletin. Your registration will be approved by the admin before publishing.</p>
+    </div>
+  </section>
+
+  <!-- ================= FORMS ================= -->
+  <main class="container forms-section">
+
+    <!-- Registration Form -->
+    <section class="form-card">
+      <h2>Register as a Blogger</h2>
+      <form action="#" method="POST" id="register-form">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="full-name" required placeholder="John Doe">
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="example@cva.org">
+
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required placeholder="Choose a username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Create password">
+
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm password">
+
+        <label for="2fa-code">2FA Verification Code</label>
+        <input type="text" id="2fa-code" name="2fa-code" required placeholder="Enter code from email/phone">
+
+        <button type="submit" class="btn-primary">Submit Registration</button>
+      </form>
+      <p class="notice">After submission, the admin will review your request. Only approved bloggers can post articles.</p>
+    </section>
+
+    <!-- Login Form -->
+    <section class="form-card">
+      <h2>Login</h2>
+      <form action="#" method="POST" id="login-form">
+        <label for="login-username">Username or Email</label>
+        <input type="text" id="login-username" name="login-username" required placeholder="Username or Email">
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" name="login-password" required placeholder="Password">
+
+        <button type="submit" class="btn-primary">Login</button>
+      </form>
+      <p class="notice">If your registration is not approved yet, you will not be able to login.</p>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
