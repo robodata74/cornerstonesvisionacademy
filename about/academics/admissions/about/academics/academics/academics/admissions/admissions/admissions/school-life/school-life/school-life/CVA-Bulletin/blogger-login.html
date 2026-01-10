@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogger Login / Registration | CVA Bulletin</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogger Portal | CVA Bulletin</title>
+  <meta name="description" content="Register or login as a blogger to submit articles for approval at Cornerstones Vision Academy." />
+  <meta name="keywords" content="Cornerstones Vision Academy, CVA, South Sudan, blogging, student articles, teacher articles, CVA Bulletin" />
+  <meta name="author" content="Cornerstones Vision Academy" />
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-xh6giXnN0PZ6rG0sHqv+YtN2J9bFzU1xZzU3Qz1pY1Jq7nYH2M1uM6k0yM7G6P+5A5M5x5x5x5x==" crossorigin="anonymous"
     referrerpolicy="no-referrer" />
@@ -33,56 +40,67 @@
     </nav>
   </header>
 
-  <!-- ================= HERO ================= -->
+  <!-- ================= HERO / FEATURE ================= -->
   <section class="hero hero-login" style="background-image: url('../images/blogger-hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Blogger Portal</h1>
-      <p>Register or Login to submit your articles for approval</p>
+      <p>Register or Login to submit articles for admin approval</p>
     </div>
   </section>
 
-  <!-- ================= LOGIN & REGISTER FORMS ================= -->
+  <!-- ================= LOGIN & REGISTRATION FORMS ================= -->
   <main class="container forms-container">
 
     <!-- Login Form -->
     <section class="login-form">
       <h2>Login</h2>
-      <form id="loginForm">
+      <form id="loginForm" action="backend/login.php" method="POST">
         <label for="username">Username</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required />
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+        <!-- Optional CAPTCHA -->
+        <div class="captcha-placeholder">
+          <!-- Replace with Google reCAPTCHA -->
+        </div>
 
         <button type="submit" class="btn-primary">Login</button>
+        <p class="note">Forgot your password? <a href="reset-password.html">Reset here</a></p>
       </form>
     </section>
 
     <!-- Registration Form -->
     <section class="registration-form">
       <h2>Register</h2>
-      <form id="registrationForm">
+      <form id="registrationForm" action="backend/register.php" method="POST" enctype="multipart/form-data">
         <label for="name">Full Name</label>
-        <input type="text" id="name" name="name" placeholder="Your full name" required>
+        <input type="text" id="name" name="name" placeholder="Your full name" required />
 
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your email" required>
+        <input type="email" id="email" name="email" placeholder="Your email" required />
 
         <label for="role">Role</label>
-        <select id="role" name="role">
+        <select id="role" name="role" required>
           <option value="student">Student</option>
           <option value="teacher">Teacher</option>
         </select>
 
         <label for="newUsername">Username</label>
-        <input type="text" id="newUsername" name="newUsername" placeholder="Choose a username" required>
+        <input type="text" id="newUsername" name="username" placeholder="Choose a username" required />
 
         <label for="newPassword">Password</label>
-        <input type="password" id="newPassword" name="newPassword" placeholder="Choose a password" required>
+        <input type="password" id="newPassword" name="password" placeholder="Choose a password (8+ characters)" minlength="8" required />
+
+        <!-- Optional CAPTCHA -->
+        <div class="captcha-placeholder">
+          <!-- Replace with Google reCAPTCHA -->
+        </div>
 
         <button type="submit" class="btn-primary">Register</button>
-        <p class="note">All registrations are pending admin approval.</p>
+        <p class="note">All registrations require admin approval. You will receive an email at <strong>blog@cornerstonesvisionacademy.org</strong> once approved.</p>
       </form>
     </section>
 
@@ -94,6 +112,13 @@
       <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- ================= OPTIONAL SCRIPTS ================= -->
+  <script>
+    // Example: Toggle between login and registration for UX
+    const loginForm = document.querySelector('.login-form');
+    const registrationForm = document.querySelector('.registration-form');
+  </script>
 
 </body>
 </html>
