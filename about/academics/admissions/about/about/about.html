@@ -1,79 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Cornerstones Vision Academy</title>
-  <link rel="stylesheet" href="css/style.css">
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About Us | Cornerstones Vision Academy</title>
+
+  <meta name="description" content="Learn about Cornerstones Vision Academy – our vision, mission, leadership, and values shaping future leaders through holistic education." />
+  <meta name="keywords" content="Cornerstones Vision Academy, CVA, education South Sudan, school leadership, vision mission values" />
+  <meta name="author" content="Cornerstones Vision Academy" />
+
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
+
 <body>
 
-  <!-- ================= NAVIGATION ================= -->
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html" class="active">About</a>
-    <a href="academics.html">Academics</a>
-
-    <div class="dropdown">
-      <a href="school-life/events.html">School Life ▾</a>
-      <div class="dropdown-menu">
-        <a href="school-life/events.html">Events</a>
-        <a href="school-life/clubs-activities.html">Clubs & Activities</a>
-        <a href="school-life/gallery.html">Gallery</a>
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Cornerstones Vision Academy</a>
       </div>
-    </div>
 
-    <a href="CVA-Bulletin/celebrating-culture-and-creativity.html">CVA Bulletin</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
 
-  <!-- ================= HERO SECTION ================= -->
-  <header class="hero hero-about">
+        <li class="dropdown">
+          <a href="about.html" class="active">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#vision">Vision & Mission</a></li>
+            <li><a href="#leadership">Leadership</a></li>
+            <li><a href="#values">Core Values</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Academics</a>
+          <ul class="dropdown-menu">
+            <li><a href="academics.html">Primary School</a></li>
+            <li><a href="academics.html#secondary">Secondary School</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">School Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="school-life/events.html">Culture & Events</a></li>
+            <li><a href="school-life/clubs-activities.html">Sports & Clubs</a></li>
+            <li><a href="school-life/gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li><a href="CVA-Bulletin/index.html">CVA Bulletin</a></li>
+        <li><a href="contact.html">Contact</a></li>
+
+        <li class="staff-login disabled">
+          <a href="#">Staff Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-about" style="background-image: url('images/about-hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>About Cornerstones Vision Academy</h1>
-      <p>Building academic excellence, creativity, and leadership in South Sudan</p>
+      <p>
+        Nurturing academic excellence, character, creativity, and leadership
+        for a brighter future.
+      </p>
     </div>
-  </header>
+  </section>
 
-  <!-- ================= MAIN CONTENT ================= -->
-  <main class="container">
+  <!-- ================= OUR STORY ================= -->
+  <section id="story" class="content-section container">
+    <h2>Our Story</h2>
+    <p>
+      Cornerstones Vision Academy (CVA) was founded with a clear purpose:
+      to provide quality education that goes beyond textbooks. From its early
+      beginnings, the academy has grown into a learning community where
+      academic excellence is balanced with moral values, cultural identity,
+      and creative expression.
+    </p>
+    <p>
+      We believe that education should shape confident thinkers, responsible
+      citizens, and compassionate leaders. Every program, activity, and
+      classroom experience at CVA is designed to prepare learners not only
+      for examinations, but for life.
+    </p>
+  </section>
 
-    <section class="content-section">
-      <h2>Our Vision</h2>
+  <!-- ================= INTERLUDE ================= -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h3>Education Rooted in Purpose</h3>
       <p>
-        Cornerstones Vision Academy seeks to be a leading educational institution in South Sudan,
-        nurturing students who excel academically, embrace creativity, and demonstrate strong moral character.
+        At Cornerstones Vision Academy, learning is intentional, values-driven,
+        and aligned with the future our students will lead.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section class="content-section">
-      <h2>Our Mission</h2>
+  <!-- ================= VISION & MISSION ================= -->
+  <section id="vision" class="content-section container">
+    <h2>Vision & Mission</h2>
+
+    <div class="two-column">
+      <div>
+        <h3>Our Vision</h3>
+        <p>
+          To be a leading educational institution that develops academically
+          competent, morally upright, and socially responsible individuals
+          capable of contributing meaningfully to society.
+        </p>
+      </div>
+
+      <div>
+        <h3>Our Mission</h3>
+        <p>
+          To provide holistic education that integrates academic rigor,
+          creativity, cultural awareness, and character development in a
+          supportive and inspiring learning environment.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= INTERLUDE ================= -->
+  <section class="interlude textured-bg">
+    <div class="container">
+      <h3>Shaping Minds. Building Character.</h3>
       <p>
-        Our mission is to provide holistic education that balances academic rigor with cultural,
-        artistic, and personal development, preparing students for future leadership and service.
+        Our mission is lived daily through teaching, mentorship, and community
+        engagement.
       </p>
-    </section>
+    </div>
+  </section>
 
-    <section class="content-section">
-      <h2>Our Core Values</h2>
-      <ul>
-        <li><strong>Integrity:</strong> Upholding honesty and ethical behavior</li>
-        <li><strong>Excellence:</strong> Striving for high standards in learning and conduct</li>
-        <li><strong>Creativity:</strong> Encouraging innovation and artistic expression</li>
-        <li><strong>Community:</strong> Fostering respect, unity, and teamwork</li>
-      </ul>
-    </section>
+  <!-- ================= LEADERSHIP ================= -->
+  <section id="leadership" class="content-section container">
+    <h2>Leadership & Governance</h2>
+    <p>
+      Cornerstones Vision Academy is guided by experienced educators and
+      administrators who are committed to excellence, accountability, and
+      student-centered learning.
+    </p>
+    <p>
+      Our leadership team works closely with teachers, parents, and the wider
+      community to ensure that the academy remains a safe, disciplined, and
+      progressive learning environment.
+    </p>
+  </section>
 
-    <section class="content-section">
+  <!-- ================= CORE VALUES ================= -->
+  <section id="values" class="content-section container">
+    <h2>Our Core Values</h2>
+
+    <ul class="values-list">
+      <li>
+        <strong>Integrity</strong> – We uphold honesty, responsibility, and
+        ethical behavior in all we do.
+      </li>
+      <li>
+        <strong>Excellence</strong> – We pursue high standards in academics,
+        conduct, and leadership.
+      </li>
+      <li>
+        <strong>Creativity</strong> – We encourage innovation, self-expression,
+        and critical thinking.
+      </li>
+      <li>
+        <strong>Community</strong> – We foster respect, collaboration, and
+        unity among learners, staff, and families.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ================= CALL TO ACTION ================= -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h3>Become Part of Our Journey</h3>
+      <p>
+        Discover how Cornerstones Vision Academy can shape your child’s future
+        through quality education and strong values.
+      </p>
       <a href="contact.html" class="btn-primary">Contact Us</a>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="site-footer">
-    <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
   </footer>
 
 </body>
