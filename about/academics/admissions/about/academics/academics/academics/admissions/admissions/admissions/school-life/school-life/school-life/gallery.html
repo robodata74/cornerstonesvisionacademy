@@ -1,69 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gallery | Cornerstones Vision Academy</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="Gallery showcasing student life, events, and achievements at Cornerstones Vision Academy." />
+  <meta name="keywords" content="CVA gallery, student life, events, South Sudan school, activities" />
+  <meta name="author" content="Cornerstones Vision Academy" />
 
-  <style>
-    .hero {
-      height: 60vh;
-      background: url('../images/gallery-hero.jpg') center/cover no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-    }
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="../css/style.css" />
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-
-    .hero h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 3rem;
-    }
-
-    .gallery {
-      max-width: 1200px;
-      margin: 60px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
-    }
-  </style>
+  <!-- Font Awesome for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>School Gallery</h1>
+  <!-- ================= HEADER / NAVIGATION ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">Cornerstones Vision Academy</a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="../about.html">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="../about.html#story">Our Story</a></li>
+            <li><a href="../about.html#vision">Vision & Mission</a></li>
+            <li><a href="../about.html#leadership">Leadership</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="../academics.html">Academics</a>
+          <ul class="dropdown-menu">
+            <li><a href="../academics.html#primary">Primary School</a></li>
+            <li><a href="../academics.html#secondary">Secondary School</a></li>
+            <li><a href="../academics.html#approach">Our Approach</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="active">School Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="events.html">Culture & Events</a></li>
+            <li><a href="clubs-activities.html">Sports & Clubs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../CVA-Bulletin/index.html">CVA Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+
+        <li class="staff-login disabled">
+          <a href="#">Staff Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-gallery" style="background-image: url('../images/gallery-hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Gallery</h1>
+      <p>Moments of learning, creativity, and celebration at CVA</p>
+    </div>
   </section>
 
-  <!-- Gallery Grid -->
-  <section class="gallery">
-    <img src="../images/gallery-1.jpg" alt="School Campus">
-    <img src="../images/gallery-2.jpg" alt="Teachers and Staff">
-    <img src="../images/gallery-3.jpg" alt="Primary Students">
-    <img src="../images/gallery-4.jpg" alt="Secondary Students">
-    <img src="../images/gallery-5.jpg" alt="Cultural Event">
-    <img src="../images/gallery-6.jpg" alt="Sports Day">
+  <!-- ================= INTRO ================= -->
+  <section class="content-section container">
+    <h2>Experience CVA Life</h2>
+    <p>
+      Explore our gallery to see how Cornerstones Vision Academy nurtures academic, cultural, and creative excellence in a vibrant student community.
+    </p>
   </section>
+
+  <!-- ================= INTERLUDE ================= -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h3>Capturing Memories</h3>
+      <p>
+        Our gallery showcases the dedication, talent, and joyful moments of CVA students and staff.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= IMAGE GRID ================= -->
+  <section class="content-section container">
+    <div class="gallery-grid">
+
+      <!-- 99 Images (1.png to 99.png) -->
+      <!-- Prevent copy with CSS in style.css -->
+      <!-- Example: -->
+      <!-- <img src="../images/1.png" alt="Gallery Image 1" /> -->
+
+      <!-- Loop manually 1 → 99 -->
+      <!-- Using copy-paste approach for now -->
+
+      <!-- Row 1 -->
+      <div class="gallery-item"><img src="../images/1.png" alt="Gallery Image 1"></div>
+      <div class="gallery-item"><img src="../images/2.png" alt="Gallery Image 2"></div>
+      <div class="gallery-item"><img src="../images/3.png" alt="Gallery Image 3"></div>
+
+      <!-- Row 2 -->
+      <div class="gallery-item"><img src="../images/4.png" alt="Gallery Image 4"></div>
+      <div class="gallery-item"><img src="../images/5.png" alt="Gallery Image 5"></div>
+      <div class="gallery-item"><img src="../images/6.png" alt="Gallery Image 6"></div>
+
+      <!-- Row 3 -->
+      <div class="gallery-item"><img src="../images/7.png" alt="Gallery Image 7"></div>
+      <div class="gallery-item"><img src="../images/8.png" alt="Gallery Image 8"></div>
+      <div class="gallery-item"><img src="../images/9.png" alt="Gallery Image 9"></div>
+
+      <!-- Row 4 -->
+      <div class="gallery-item"><img src="../images/10.png" alt="Gallery Image 10"></div>
+      <div class="gallery-item"><img src="../images/11.png" alt="Gallery Image 11"></div>
+      <div class="gallery-item"><img src="../images/12.png" alt="Gallery Image 12"></div>
+
+      <!-- Continue same pattern up to 99.png -->
+      <div class="gallery-item"><img src="../images/13.png" alt="Gallery Image 13"></div>
+      <div class="gallery-item"><img src="../images/14.png" alt="Gallery Image 14"></div>
+      <div class="gallery-item"><img src="../images/15.png" alt="Gallery Image 15"></div>
+
+      <!-- ... repeat until 99.png ... -->
+
+      <div class="gallery-item"><img src="../images/99.png" alt="Gallery Image 99"></div>
+
+    </div>
+  </section>
+
+  <!-- ================= CALL TO ACTION ================= -->
+  <section class="interlude textured-bg">
+    <div class="container">
+      <h3>Want to Join CVA?</h3>
+      <p>Become part of a thriving community of learners and leaders.</p>
+      <a href="../contact.html" class="btn-primary">Contact Us Today</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
