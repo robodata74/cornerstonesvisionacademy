@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blogger Registration & Login | CVA Bulletin</title>
-  <meta name="description" content="Register or login as a blogger to submit articles for CVA Bulletin. Pending admin approval.">
+  <title>Blogger Login / Registration | CVA Bulletin</title>
   <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-xh6giXnN0PZ6rG0sHqv+YtN2J9bFzU1xZzU3Qz1pY1Jq7nYH2M1uM6k0yM7G6P+5A5M5x5x5x5x==" crossorigin="anonymous"
@@ -35,57 +34,56 @@
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="hero-article" style="background-image: url('../images/blogger-hero.jpg');">
+  <section class="hero hero-login" style="background-image: url('../images/blogger-hero.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>Blogger Registration & Login</h1>
-      <p>Submit your articles to CVA Bulletin. Your registration will be approved by the admin before publishing.</p>
+      <h1>Blogger Portal</h1>
+      <p>Register or Login to submit your articles for approval</p>
     </div>
   </section>
 
-  <!-- ================= FORMS ================= -->
-  <main class="container forms-section">
-
-    <!-- Registration Form -->
-    <section class="form-card">
-      <h2>Register as a Blogger</h2>
-      <form action="#" method="POST" id="register-form">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" name="full-name" required placeholder="John Doe">
-
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" required placeholder="example@cva.org">
-
-        <label for="username">Username</label>
-        <input type="text" id="username" name="username" required placeholder="Choose a username">
-
-        <label for="password">Password</label>
-        <input type="password" id="password" name="password" required placeholder="Create password">
-
-        <label for="confirm-password">Confirm Password</label>
-        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Confirm password">
-
-        <label for="2fa-code">2FA Verification Code</label>
-        <input type="text" id="2fa-code" name="2fa-code" required placeholder="Enter code from email/phone">
-
-        <button type="submit" class="btn-primary">Submit Registration</button>
-      </form>
-      <p class="notice">After submission, the admin will review your request. Only approved bloggers can post articles.</p>
-    </section>
+  <!-- ================= LOGIN & REGISTER FORMS ================= -->
+  <main class="container forms-container">
 
     <!-- Login Form -->
-    <section class="form-card">
+    <section class="login-form">
       <h2>Login</h2>
-      <form action="#" method="POST" id="login-form">
-        <label for="login-username">Username or Email</label>
-        <input type="text" id="login-username" name="login-username" required placeholder="Username or Email">
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username" required>
 
-        <label for="login-password">Password</label>
-        <input type="password" id="login-password" name="login-password" required placeholder="Password">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
         <button type="submit" class="btn-primary">Login</button>
       </form>
-      <p class="notice">If your registration is not approved yet, you will not be able to login.</p>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="registration-form">
+      <h2>Register</h2>
+      <form id="registrationForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required>
+
+        <label for="role">Role</label>
+        <select id="role" name="role">
+          <option value="student">Student</option>
+          <option value="teacher">Teacher</option>
+        </select>
+
+        <label for="newUsername">Username</label>
+        <input type="text" id="newUsername" name="newUsername" placeholder="Choose a username" required>
+
+        <label for="newPassword">Password</label>
+        <input type="password" id="newPassword" name="newPassword" placeholder="Choose a password" required>
+
+        <button type="submit" class="btn-primary">Register</button>
+        <p class="note">All registrations are pending admin approval.</p>
+      </form>
     </section>
 
   </main>
