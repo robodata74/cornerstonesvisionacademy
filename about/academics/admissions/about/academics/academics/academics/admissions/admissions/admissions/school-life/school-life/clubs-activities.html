@@ -1,110 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clubs & Activities | Cornerstones Vision Academy</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <meta name="description" content="Explore clubs, sports, and extracurricular activities at Cornerstones Vision Academy, fostering creativity, teamwork, and leadership." />
+  <meta name="keywords" content="CVA clubs, sports, activities, student life, South Sudan, school extracurriculars" />
+  <meta name="author" content="Cornerstones Vision Academy" />
 
-  <style>
-    .hero {
-      height: 60vh;
-      background: url('../images/clubs-hero.jpg') center/cover no-repeat;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      text-align: center;
-    }
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="../css/style.css" />
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-    }
-
-    .hero h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 3rem;
-    }
-
-    .content {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-    }
-
-    .activity {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-      margin-bottom: 60px;
-      align-items: center;
-    }
-
-    .activity img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .activity h2 {
-      color: #004080;
-    }
-
-    @media(max-width: 768px){
-      .activity {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 
 <body>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Clubs & Student Activities</h1>
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">Cornerstones Vision Academy</a>
+      </div>
+
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="../about.html">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="../about.html#story">Our Story</a></li>
+            <li><a href="../about.html#vision">Vision & Mission</a></li>
+            <li><a href="../about.html#leadership">Leadership</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="../academics.html">Academics</a>
+          <ul class="dropdown-menu">
+            <li><a href="../academics.html#primary">Primary School</a></li>
+            <li><a href="../academics.html#secondary">Secondary School</a></li>
+            <li><a href="../academics.html#approach">Our Approach</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="active">School Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="events.html">Culture & Events</a></li>
+            <li><a href="clubs-activities.html">Sports & Clubs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../CVA-Bulletin/index.html">CVA Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+
+        <li class="staff-login disabled">
+          <a href="#">Staff Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-clubs" style="background-image: url('../images/clubs-hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Clubs & Activities at CVA</h1>
+      <p>Fostering creativity, teamwork, and leadership beyond the classroom.</p>
+    </div>
   </section>
 
-  <!-- Content -->
-  <section class="content">
-
-    <div class="activity">
-      <img src="../images/drama-club.jpg" alt="Drama Club">
-      <div>
-        <h2>Drama & Performing Arts</h2>
-        <p>
-          CVA’s drama club nurtures confidence, creativity, and communication skills. 
-          Students engage in plays, poetry, music, and cultural storytelling inspired by South Sudanese heritage.
-        </p>
-      </div>
-    </div>
-
-    <div class="activity">
-      <div>
-        <h2>Music & Cultural Dance</h2>
-        <p>
-          Through music and traditional dance, students explore rhythm, history, and cultural pride. 
-          Performances are showcased during school celebrations and interschool festivals.
-        </p>
-      </div>
-      <img src="../images/music-dance.jpg" alt="Music and Cultural Dance">
-    </div>
-
-    <div class="activity">
-      <img src="../images/sports.jpg" alt="Sports Activities">
-      <div>
-        <h2>Sports & Physical Activities</h2>
-        <p>
-          CVA promotes physical wellness through football, athletics, and team sports that build discipline, teamwork, and leadership.
-        </p>
-      </div>
-    </div>
-
+  <!-- ================= INTRO ================= -->
+  <section class="content-section container">
+    <h2>Vibrant Student Life</h2>
+    <p>
+      Cornerstones Vision Academy encourages students to explore their passions through sports, clubs, and other extracurricular activities. These programs build leadership, teamwork, and personal growth.
+    </p>
   </section>
+
+  <!-- ================= INTERLUDE ================= -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h3>Developing Skills & Character</h3>
+      <p>
+        Students engage in activities that promote creativity, critical thinking, and social responsibility.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= CLUBS & ACTIVITIES GRID ================= -->
+  <section class="content-section container">
+    <div class="activity-grid">
+
+      <div class="activity">
+        <img src="../images/clubs-1.jpg" alt="Football Team" />
+        <h4>Football Team</h4>
+        <p>Building teamwork, discipline, and sportsmanship on the field.</p>
+      </div>
+
+      <div class="activity">
+        <img src="../images/clubs-2.jpg" alt="Debate Club" />
+        <h4>Debate Club</h4>
+        <p>Sharpening critical thinking, communication, and leadership skills.</p>
+      </div>
+
+      <div class="activity">
+        <img src="../images/clubs-3.jpg" alt="Drama Club" />
+        <h4>Drama Club</h4>
+        <p>Encouraging creativity and expression through theater and performance.</p>
+      </div>
+
+      <div class="activity">
+        <img src="../images/clubs-4.jpg" alt="Science Club" />
+        <h4>Science Club</h4>
+        <p>Exploring experiments, research, and innovation in STEM fields.</p>
+      </div>
+
+      <div class="activity">
+        <img src="../images/clubs-5.jpg" alt="Music Club" />
+        <h4>Music Club</h4>
+        <p>Fostering musical talents through choir and instrumental practice.</p>
+      </div>
+
+      <div class="activity">
+        <img src="../images/clubs-6.jpg" alt="Art Club" />
+        <h4>Art Club</h4>
+        <p>Inspiring creativity, design, and visual storytelling skills.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="interlude textured-bg">
+    <div class="container">
+      <h3>Join a Club Today!</h3>
+      <p>
+        Experience growth, fun, and community through our diverse activities.
+      </p>
+      <a href="../contact.html" class="btn-primary">Get Involved</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
