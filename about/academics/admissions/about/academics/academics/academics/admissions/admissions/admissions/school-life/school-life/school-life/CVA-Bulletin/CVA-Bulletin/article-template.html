@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{{ARTICLE_TITLE}} | CVA Bulletin</title>
+  <meta name="description" content="{{META_DESCRIPTION}}" />
+  <meta name="keywords" content="{{KEYWORDS}}" />
+  <meta name="author" content="{{AUTHOR}}" />
+
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <!-- Dark Bulletin Overrides -->
+  <link rel="stylesheet" href="../css/bulletin-dark.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous" />
+</head>
+
+<body class="bulletin-dark">
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">Cornerstones Vision Academy</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../academics.html">Academics</a></li>
+        <li><a class="active" href="index.html">CVA Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="blogger-login.html" class="btn-outline">Blogger Portal</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="bulletin-hero"
+    style="background-image: url('{{HERO_IMAGE}}');">
+    <div class="bulletin-hero-overlay"></div>
+    <div class="bulletin-hero-content">
+      <h1>{{ARTICLE_TITLE}}</h1>
+      <p class="subtitle">{{ARTICLE_SUBTITLE}}</p>
+      <div class="meta">
+        <span>By {{AUTHOR}}</span> •
+        <span>{{DATE}}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ARTICLE ================= -->
+  <main class="bulletin-article container">
+
+    {{ARTICLE_CONTENT}}
+
+    <div class="article-footer">
+      <a href="index.html" class="btn-primary">← Back to Bulletin</a>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer dark-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
