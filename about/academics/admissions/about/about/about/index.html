@@ -1,174 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cornerstones Vision Academy | Home</title>
-  <link rel="stylesheet" href="css/style.css">
-  <style>
-    /* Hero Slider */
-    #hero {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cornerstones Vision Academy | Educating Future Leaders</title>
 
-    .slide {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      opacity: 0;
-      transition: opacity 1s ease-in-out;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-    }
+  <!-- Main Styles -->
+  <link rel="stylesheet" href="css/style.css" />
 
-    .slide.active { opacity: 1; z-index: 2; }
-
-    .slide::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      top:0;
-      left:0;
-      z-index:1;
-    }
-
-    .slide-content {
-      position: relative;
-      z-index:2;
-      max-width: 800px;
-    }
-
-    .slide-content h2 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    .slide-content p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .btn {
-      background: #004080;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      display: inline-block;
-      text-decoration: none;
-      transition: 0.3s;
-    }
-
-    .btn:hover { background: #0066cc; }
-
-    /* Social media icons placeholder */
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      color: #fff;
-      font-size: 1.5rem;
-      text-decoration: none;
-    }
-
-    .social-icons a:hover { color: #ffcc00; }
-  </style>
+  <!-- Icons (Font Awesome for social icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-xh6giXnN0PZ6rG0sHqv+YtN2J9bFzU1xZzU3Qz1pY1Jq7nYH2M1uM6k0yM7G6P+5A5M5x5x5x5x=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
+
 <body>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="academics.html">Academics</a>
-    <div style="display:inline-block; position:relative;">
-      <a href="school-life/events.html">School Life &#x25BE;</a>
-      <div style="display:none; position:absolute; background:#004080; margin-top:5px; border-radius:5px;" class="dropdown">
-        <a href="school-life/events.html" style="display:block; padding:10px; color:#fff;">Events</a>
-        <a href="school-life/clubs-activities.html" style="display:block; padding:10px; color:#fff;">Clubs & Activities</a>
-        <a href="school-life/gallery.html" style="display:block; padding:10px; color:#fff;">Gallery</a>
+  <!-- ===================== -->
+  <!-- TOP NAVIGATION BAR -->
+  <!-- ===================== -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Cornerstones Vision Academy</a>
       </div>
-    </div>
-    <a href="CVA-Bulletin/celebrating-culture-and-creativity.html">CVA Bulletin</a>
-    <a href="contact.html">Contact</a>
-  </nav>
 
-  <!-- Hero Slider -->
-  <section id="hero">
-    <div class="slide active" style="background-image: url('images/slide1.jpg');">
-      <div class="slide-content">
-        <h2>Welcome to Cornerstones Vision Academy</h2>
-        <p>Nurturing Creativity, Leadership & Excellence</p>
-        <a href="about.html" class="btn">Read More</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html#vision">Vision & Mission</a></li>
+            <li><a href="about.html#leadership">Leadership</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Academics</a>
+          <ul class="dropdown-menu">
+            <li><a href="academics.html">Primary School</a></li>
+            <li><a href="academics.html#secondary">Secondary School</a></li>
+            <li><a href="academics.html#curriculum">Curriculum</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">School Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="school-life/events.html">Culture & Events</a></li>
+            <li><a href="school-life/clubs-activities.html">Sports & Clubs</a></li>
+            <li><a href="school-life/gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">CVA Bulletin</a>
+          <ul class="dropdown-menu">
+            <li><a href="CVA-Bulletin/index.html">News</a></li>
+            <li><a href="CVA-Bulletin/index.html#events">Events</a></li>
+            <li><a href="CVA-Bulletin/celebrating-culture-and-creativity.html">Blog</a></li>
+          </ul>
+        </li>
+
+        <li><a href="contact.html">Contact</a></li>
+
+        <li class="staff-login disabled">
+          <a href="#">Staff Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===================== -->
+  <!-- HERO SECTION (6 SLIDES) -->
+  <!-- ===================== -->
+  <section class="hero-slider">
+
+    <!-- Overlay -->
+    <div class="hero-overlay"></div>
+
+    <!-- Slides -->
+    <div class="slide active" style="background-image: url('images/hero-1-school.jpg');">
+      <div class="hero-content">
+        <h1>Building Strong Foundations for the Future</h1>
+        <p>Quality education rooted in values, culture, and excellence.</p>
+        <a href="about.html" class="btn-primary">Read More</a>
       </div>
     </div>
-    <div class="slide" style="background-image: url('images/slide2.jpg');">
-      <div class="slide-content">
-        <h2>Our Dedicated Staff</h2>
-        <p>Committed to Excellence in Teaching and Mentorship</p>
-        <a href="about.html" class="btn">Read More</a>
+
+    <div class="slide" style="background-image: url('images/hero-2-staff.jpg');">
+      <div class="hero-content">
+        <h1>Dedicated Educators, Inspired Learners</h1>
+        <p>Our teachers nurture curiosity, confidence, and leadership.</p>
+        <a href="about.html#leadership" class="btn-primary">Meet Our Team</a>
       </div>
     </div>
-    <div class="slide" style="background-image: url('images/slide3.jpg');">
-      <div class="slide-content">
-        <h2>Primary Students Learning</h2>
-        <p>Fostering Curiosity and Creativity from the Start</p>
-        <a href="academics.html" class="btn">Read More</a>
+
+    <div class="slide" style="background-image: url('images/hero-3-primary.jpg');">
+      <div class="hero-content">
+        <h1>Primary Education with Purpose</h1>
+        <p>Creating a joyful and engaging learning environment.</p>
+        <a href="academics.html" class="btn-primary">Explore Primary</a>
       </div>
     </div>
-    <div class="slide" style="background-image: url('images/slide4.jpg');">
-      <div class="slide-content">
-        <h2>Secondary Students Activities</h2>
-        <p>Developing Skills for Tomorrow’s Leaders</p>
-        <a href="academics.html" class="btn">Read More</a>
+
+    <div class="slide" style="background-image: url('images/hero-4-secondary.jpg');">
+      <div class="hero-content">
+        <h1>Preparing Tomorrow’s Leaders</h1>
+        <p>Academic excellence blended with real-world skills.</p>
+        <a href="academics.html#secondary" class="btn-primary">Explore Secondary</a>
       </div>
     </div>
-    <div class="slide" style="background-image: url('images/slide5.jpg');">
-      <div class="slide-content">
-        <h2>School Events & Competitions</h2>
-        <p>Celebrating Achievements Across All Fields</p>
-        <a href="school-life/events.html" class="btn">Read More</a>
+
+    <div class="slide" style="background-image: url('images/hero-5-events.jpg');">
+      <div class="hero-content">
+        <h1>Celebrating Culture & Creativity</h1>
+        <p>Where talent, tradition, and expression thrive.</p>
+        <a href="school-life/events.html" class="btn-primary">View Events</a>
       </div>
     </div>
-    <div class="slide" style="background-image: url('images/slide6.jpg');">
-      <div class="slide-content">
-        <h2>Cultural Programs</h2>
-        <p>Preserving Heritage and Creativity in Every Student</p>
-        <a href="school-life/events.html" class="btn">Read More</a>
+
+    <div class="slide" style="background-image: url('images/hero-6-community.jpg');">
+      <div class="hero-content">
+        <h1>A Community That Inspires Growth</h1>
+        <p>Partnering with families to shape responsible citizens.</p>
+        <a href="contact.html" class="btn-primary">Join Our Community</a>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ===================== -->
+  <!-- SOCIAL MEDIA FLOATING BAR -->
+  <!-- ===================== -->
+  <div class="social-media-bar">
+    <a href="https://www.youtube.com/@CornerstonesVisionAcademy-n4o" target="_blank" aria-label="YouTube">
+      <i class="fab fa-youtube"></i>
+    </a>
+    <a href="https://x.com/Cornerston96612" target="_blank" aria-label="X">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+    <a href="https://www.tiktok.com/@cva20062" target="_blank" aria-label="TikTok">
+      <i class="fab fa-tiktok"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/cornerstones-vision-academy-04066239a/" target="_blank" aria-label="LinkedIn">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+  </div>
+
+  <!-- ===================== -->
+  <!-- INTERLUDE SECTION -->
+  <!-- ===================== -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h2>Why Cornerstones Vision Academy?</h2>
+      <p>
+        At Cornerstones Vision Academy, we believe education is more than
+        academics. It is about nurturing character, embracing culture, and
+        empowering learners to become confident contributors to society.
+      </p>
+      <a href="about.html" class="btn-secondary">Read More</a>
+    </div>
+  </section>
+
+  <!-- ===================== -->
+  <!-- TESTIMONIALS -->
+  <!-- ===================== -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Our Community Says</h2>
+
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <p>
+            “Cornerstones Vision Academy has created a learning environment
+            where my child feels safe, inspired, and motivated to excel.”
+          </p>
+          <h4>— Parent</h4>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            “The school’s emphasis on culture, discipline, and academic
+            excellence truly sets it apart.”
+          </p>
+          <h4>— Community Leader</h4>
+        </div>
+
+        <div class="testimonial">
+          <p>
+            “Teaching at CVA is rewarding because students are encouraged
+            to think creatively and grow holistically.”
+          </p>
+          <h4>— Teacher</h4>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Social Media Icons -->
-  <div class="social-icons">
-    <a href="#" title="Facebook">FB</a>
-    <a href="#" title="Twitter">TW</a>
-    <a href="#" title="Instagram">IG</a>
-    <a href="#" title="YouTube">YT</a>
-  </div>
-
-  <!-- Hero Slider Script -->
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let current = 0;
-    setInterval(() => {
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 5000);
-  </script>
+  <!-- ===================== -->
+  <!-- FOOTER -->
+  <!-- ===================== -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
