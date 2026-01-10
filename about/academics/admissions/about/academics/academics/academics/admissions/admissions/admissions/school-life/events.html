@@ -1,98 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>School Events - CVA</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <style>
-    /* Section-specific styling */
-    .hero-section {
-      position: relative;
-      height: 60vh;
-      background: url('../images/events-hero.jpg') center center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      text-align: center;
-    }
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Life & Events | Cornerstones Vision Academy</title>
+  <meta name="description" content="Discover the vibrant school life at Cornerstones Vision Academy. Explore cultural events, performances, and student achievements." />
+  <meta name="keywords" content="CVA events, school culture, student activities, South Sudan, performances" />
+  <meta name="author" content="Cornerstones Vision Academy" />
 
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.5);
-      top:0;
-      left:0;
-    }
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="../css/style.css" />
 
-    .hero-section h1 {
-      position: relative;
-      z-index: 1;
-      font-size: 3em;
-      margin: 0;
-    }
-
-    .section-content {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 0 20px;
-    }
-
-    .section-content h2 {
-      color: #004080;
-      font-size: 2em;
-      margin-bottom: 15px;
-    }
-
-    .section-content p {
-      margin-bottom: 20px;
-      line-height: 1.7;
-    }
-
-    .video-container {
-      max-width: 800px;
-      margin: 30px auto;
-      position: relative;
-    }
-
-    .video-container iframe {
-      width: 100%;
-      height: 450px;
-      border: 0;
-    }
-
-  </style>
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
+
 <body>
 
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <h1>School Events & Culture</h1>
-  </section>
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo">
+        <a href="../index.html">Cornerstones Vision Academy</a>
+      </div>
 
-  <!-- Main Content -->
-  <section class="section-content">
-    <h2>Our Events</h2>
-    <p>Cornerstones Vision Academy (CVA) hosts a variety of events throughout the academic year to celebrate student creativity, cultural heritage, and academic achievements. These include drama festivals, musical performances, folk dance exhibitions, and more.</p>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
 
-    <h2>Event & Culture Video</h2>
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/bobV7Su2Log"
-        title="CVA Event & Culture Video"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+        <li class="dropdown">
+          <a href="../about.html">About</a>
+          <ul class="dropdown-menu">
+            <li><a href="../about.html#story">Our Story</a></li>
+            <li><a href="../about.html#vision">Vision & Mission</a></li>
+            <li><a href="../about.html#leadership">Leadership</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="../academics.html">Academics</a>
+          <ul class="dropdown-menu">
+            <li><a href="../academics.html#primary">Primary School</a></li>
+            <li><a href="../academics.html#secondary">Secondary School</a></li>
+            <li><a href="../academics.html#approach">Our Approach</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#" class="active">School Life</a>
+          <ul class="dropdown-menu">
+            <li><a href="events.html">Culture & Events</a></li>
+            <li><a href="clubs-activities.html">Sports & Clubs</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </li>
+
+        <li><a href="../CVA-Bulletin/index.html">CVA Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+
+        <li class="staff-login disabled">
+          <a href="#">Staff Login</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-events" style="background-image: url('../images/events-hero.jpg');">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Culture & Events at CVA</h1>
+      <p>Celebrating creativity, talent, and our rich South Sudanese heritage.</p>
     </div>
-
-    <p>Through these events, CVA encourages students to explore their talents, work collaboratively, and develop confidence. Participation in interschool competitions and cultural activities reinforces the importance of teamwork, creativity, and community engagement.</p>
-    
-    <p>We regularly update our events and cultural highlights in our <a href="../CVA-Bulletin/celebrating-culture-and-creativity.html" class="btn">CVA Bulletin</a> for parents, students, and staff.</p>
-
   </section>
+
+  <!-- ================= INTRO ================= -->
+  <section class="content-section container">
+    <h2>Our Vibrant School Life</h2>
+    <p>
+      Cornerstones Vision Academy nurtures students beyond the classroom.
+      From drama and music to cultural celebrations, our students experience
+      growth, teamwork, and joy at every step.
+    </p>
+  </section>
+
+  <!-- ================= INTERLUDE ================= -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h3>Creativity in Action</h3>
+      <p>
+        Students express themselves through art, dance, drama, and music, showcasing their talents to the community.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= FEATURED EVENT (YouTube) ================= -->
+  <section class="content-section container">
+    <h2>Featured Event: Interschool Drama Festival</h2>
+    <p>
+      Cornerstones Vision Academy proudly presented at the Northern Bahr el Gazal State Interschool Drama Festival. Students participated in drama, folk dance, music, and poetry, celebrating culture and creativity.
+    </p>
+
+    <!-- YouTube Embed -->
+    <div class="video-container">
+      <iframe width="100%" height="500" src="https://www.youtube.com/embed/bobV7Su2Log" title="CVA Interschool Drama Festival" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- ================= EVENTS GALLERY INTERLUDE ================= -->
+  <section class="interlude textured-bg">
+    <div class="container">
+      <h3>Highlights of Student Life</h3>
+      <p>
+        Capturing moments of joy, collaboration, and achievement through photos and videos.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= EVENT DETAILS ================= -->
+  <section class="content-section container">
+    <div class="event-grid">
+      <div class="event">
+        <img src="../images/events-1.jpg" alt="Drama Performance" />
+        <h4>Drama & Theatre</h4>
+        <p>Students showcase storytelling skills through captivating performances.</p>
+      </div>
+      <div class="event">
+        <img src="../images/events-2.jpg" alt="Folk Dance" />
+        <h4>Folk Dance</h4>
+        <p>Celebrating South Sudanese traditions through vibrant dance performances.</p>
+      </div>
+      <div class="event">
+        <img src="../images/events-3.jpg" alt="Music Recital" />
+        <h4>Music & Choir</h4>
+        <p>Vocal and instrumental presentations that highlight talent and creativity.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CTA ================= -->
+  <section class="interlude patterned-bg">
+    <div class="container">
+      <h3>Experience CVA School Life</h3>
+      <p>
+        Join our community and be part of a vibrant educational journey.
+      </p>
+      <a href="../contact.html" class="btn-primary">Enquire Now</a>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
