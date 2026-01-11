@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Article Approval | CVA Bulletin</title>
+  <meta name="description" content="Admin page to view, approve, or delete articles submitted to CVA Bulletin." />
+  <meta name="keywords" content="CVA Bulletin, admin approval, article management, Cornerstones Vision Academy" />
+  <meta name="author" content="Cornerstones Vision Academy" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/bulletin-dark.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body class="bulletin-dark">
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo"><a href="../index.html">Cornerstones Vision Academy</a></div>
+      <ul class="nav-menu">
+        <li><a href="dashboard-dark.html" class="active btn-outline">Dashboard</a></li>
+        <li><a href="index.html">Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="bulletin-hero" style="background-image: url('../images/bulletin-hero-2.jpg');">
+    <div class="bulletin-hero-overlay"></div>
+    <div class="bulletin-hero-content">
+      <h1>Article Approval</h1>
+      <p class="subtitle">Review, approve, or delete submitted articles</p>
+    </div>
+  </section>
+
+  <!-- ================= ARTICLE LIST ================= -->
+  <main class="container dashboard-container">
+
+    <section class="dashboard-section">
+      <h2>Pending Articles</h2>
+      <div class="article-admin-card">
+        <h3>Celebrating Culture and Creativity</h3>
+        <p><strong>Author:</strong> Valentino Achak Deng • <strong>Date:</strong> Jan 10, 2026</p>
+        <p class="read-more-content">
+          Cornerstones Vision Academy excelled in the Interschool Drama Festival with drama, folk dance, music, and poetry. Students showcased talent, culture, and creativity in front of parents and the community. This article details the performances, awards, and behind-the-scenes experiences.
+        </p>
+        <button class="read-more-btn">Read Full Article</button>
+        <div class="admin-actions">
+          <button class="btn-primary">Approve</button>
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+
+      <div class="article-admin-card">
+        <h3>Student Art Exhibition 2026</h3>
+        <p><strong>Author:</strong> Mary John • <strong>Date:</strong> Feb 5, 2026</p>
+        <p class="read-more-content">
+          Our students’ creativity shines at the annual art exhibition featuring paintings, crafts, and multimedia projects. Teachers and visitors praised the innovative and culturally rich displays. This article provides a detailed overview of exhibits and student reflections.
+        </p>
+        <button class="read-more-btn">Read Full Article</button>
+        <div class="admin-actions">
+          <button class="btn-primary">Approve</button>
+          <button class="btn-delete">Delete</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer dark-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // Read More toggle functionality
+    document.querySelectorAll('.read-more-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const content = btn.previousElementSibling;
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        btn.textContent = content.style.display === 'block' ? 'Hide Article' : 'Read Full Article';
+      });
+    });
+  </script>
+
+</body>
+</html>
