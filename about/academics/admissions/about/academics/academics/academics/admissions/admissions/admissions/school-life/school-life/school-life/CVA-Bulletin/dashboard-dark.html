@@ -1,196 +1,314 @@
-<?php
-session_start();
-require_once 'backend/config.php'; // DB connection using PDO
-?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CVA Bulletin Admin Dashboard | Cornerstones Vision Academy</title>
-  <meta name="description" content="Admin dashboard for managing blogger registrations and article approvals at CVA Bulletin." />
-  <meta name="keywords" content="CVA Bulletin, admin dashboard, blogger approval, article moderation, Cornerstones Vision Academy" />
-  <meta name="author" content="Cornerstones Vision Academy" />
+/* =======================================================
+   CVA Bulletin Dark Theme
+   Dark mode dashboard & bulletin styling
+   Fully responsive, modular, best practices
+   ======================================================= */
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="../css/bulletin-dark.css" />
+/* =========================
+   GLOBAL STYLES
+========================= */
+body.bulletin-dark {
+  background-color: #0f172a;
+  color: #e5e7eb;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
-</head>
-<body class="bulletin-dark">
+a {
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover,
+a:focus {
+  color: #2563eb;
+  outline: none;
+}
 
-  <!-- ================= HEADER ================= -->
-  <header class="main-header">
-    <nav class="navbar">
-      <div class="logo"><a href="../index.html">Cornerstones Vision Academy</a></div>
-      <ul class="nav-menu">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../academics.html">Academics</a></li>
-        <li><a href="index.html">CVA Bulletin</a></li>
-        <li><a href="dashboard-dark.php" class="active btn-outline">Dashboard</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+/* =========================
+   HEADER & NAVBAR
+========================= */
+.main-header {
+  background-color: #020617;
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-  <!-- ================= HERO ================= -->
-  <section class="bulletin-hero" style="background-image: url('../images/bulletin-hero-2.jpg');">
-    <div class="bulletin-hero-overlay"></div>
-    <div class="bulletin-hero-content">
-      <h1>Admin Dashboard</h1>
-      <p class="subtitle">Manage Blogger Registrations & Article Approvals</p>
-    </div>
-  </section>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+}
 
-  <!-- ================= MAIN CONTENT ================= -->
-  <main class="container dashboard-container">
+.navbar .logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
 
-    <!-- ================= ADMIN FEEDBACK ================= -->
-    <?php if(!empty($_SESSION['success'])): ?>
-      <div class="admin-alert success"><?= htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?></div>
-    <?php elseif(!empty($_SESSION['error'])): ?>
-      <div class="admin-alert error"><?= htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></div>
-    <?php endif; ?>
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
 
-    <!-- ================= PENDING BLOGGERS ================= -->
-    <section class="dashboard-section">
-      <h2>Pending Blogger Registrations</h2>
-      <table class="dashboard-table">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Username</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          $stmt = $pdo->query("SELECT id, name, email, role, username, status FROM bloggers WHERE status='Pending' ORDER BY id ASC");
-          while ($blogger = $stmt->fetch(PDO::FETCH_ASSOC)):
-          ?>
-          <tr>
-            <td><?= htmlspecialchars($blogger['name']) ?></td>
-            <td><?= htmlspecialchars($blogger['email']) ?></td>
-            <td><?= htmlspecialchars($blogger['role']) ?></td>
-            <td><?= htmlspecialchars($blogger['username']) ?></td>
-            <td><?= htmlspecialchars($blogger['status']) ?></td>
-            <td class="actions">
-              <form action="backend/blogger-actions.php" method="POST" class="inline-form">
-                <input type="hidden" name="user_id" value="<?= $blogger['id'] ?>">
-                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
-                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
-              </form>
-            </td>
-          </tr>
-          <?php endwhile; ?>
-        </tbody>
-      </table>
-    </section>
+.nav-menu li a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-    <!-- ================= PENDING ARTICLES ================= -->
-    <section class="dashboard-section">
-      <h2>Pending Article Submissions</h2>
-      <table class="dashboard-table">
-        <thead>
-          <tr>
-            <th>Title</th>
-            <th>Author</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-          $stmt = $pdo->query("SELECT a.id, a.title, a.status, a.created_at, b.name AS author_name 
-                               FROM articles a 
-                               JOIN bloggers b ON a.author_id = b.id
-                               WHERE a.status='Pending'
-                               ORDER BY a.created_at DESC");
-          while($article = $stmt->fetch(PDO::FETCH_ASSOC)):
-          ?>
-          <tr>
-            <td><?= htmlspecialchars($article['title']) ?></td>
-            <td><?= htmlspecialchars($article['author_name']) ?></td>
-            <td><?= date('M d, Y', strtotime($article['created_at'])) ?></td>
-            <td><?= htmlspecialchars($article['status']) ?></td>
-            <td class="actions">
-              <button class="btn-readmore" data-article-id="<?= $article['id'] ?>">Read More</button>
-              <form action="backend/article-actions.php" method="POST" class="inline-form">
-                <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
-                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
-                <button type="submit" name="action" value="feature" class="btn-feature">Feature</button>
-              </form>
-            </td>
-          </tr>
-          <?php endwhile; ?>
-        </tbody>
-      </table>
-    </section>
+.nav-menu li a:hover,
+.nav-menu li a:focus {
+  background-color: #1e293b;
+  color: #3b82f6;
+}
 
-  </main>
+.nav-menu li a.active {
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+}
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="main-footer dark-footer">
-    <div class="container">
-      <p>&copy; <?= date('Y') ?> Cornerstones Vision Academy. All Rights Reserved.</p>
-    </div>
-  </footer>
+/* =========================
+   HERO SECTION
+========================= */
+.bulletin-hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
 
-  <!-- ================= READ MORE MODAL ================= -->
-  <div id="readMoreModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <button class="close-btn" aria-label="Close">&times;</button>
-      <h3 id="modalTitle"></h3>
-      <p id="modalContent"></p>
-    </div>
-  </div>
+.bulletin-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+}
 
-  <!-- ================= SCRIPTS ================= -->
-  <script>
-    const modal = document.getElementById('readMoreModal');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalContent = document.getElementById('modalContent');
-    const closeBtn = document.querySelector('.close-btn');
+.bulletin-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 6rem 2rem;
+  text-align: center;
+}
 
-    document.querySelectorAll('.btn-readmore').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const articleId = btn.dataset.articleId;
-        fetch(`backend/fetch-article.php?id=${articleId}`)
-          .then(res => res.json())
-          .then(data => {
-            if(data.error) {
-              alert(data.error);
-              return;
-            }
-            modalTitle.textContent = data.title;
-            modalContent.textContent = data.content;
-            modal.setAttribute('aria-hidden','false');
-            modal.style.display = "block";
-          })
-          .catch(err => console.error("Fetch article error:", err));
-      });
-    });
+.bulletin-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
 
-    closeBtn.addEventListener('click', () => {
-      modal.style.display = "none";
-      modal.setAttribute('aria-hidden','true');
-    });
+.bulletin-hero .subtitle {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  color: #d1d5db;
+}
 
-    window.addEventListener('click', e => {
-      if(e.target === modal) {
-        modal.style.display = "none";
-        modal.setAttribute('aria-hidden','true');
-      }
-    });
-  </script>
+/* =========================
+   ADMIN ALERTS
+========================= */
+.admin-alert {
+  max-width: 900px;
+  margin: 1.5rem auto;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
 
-</body>
-</html>
+.admin-alert.success {
+  background-color: #16a34a;
+  color: #f0fdf4;
+}
+
+.admin-alert.error {
+  background-color: #dc2626;
+  color: #fef2f2;
+}
+
+/* =========================
+   DASHBOARD CONTAINER
+========================= */
+.dashboard-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+/* -------------------------
+   DASHBOARD SECTION
+------------------------- */
+.dashboard-section {
+  margin-bottom: 3rem;
+}
+
+.dashboard-section h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #60a5fa;
+}
+
+/* -------------------------
+   TABLE STYLES
+------------------------- */
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e293b;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+  color: #e5e7eb;
+  border-bottom: 1px solid #334155;
+}
+
+.dashboard-table th {
+  background-color: #111827;
+  font-weight: 600;
+}
+
+.dashboard-table tr:hover {
+  background-color: #111827;
+}
+
+/* -------------------------
+   ACTION BUTTONS
+------------------------- */
+.inline-form {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-feature {
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-feature:hover,
+.btn-feature:focus {
+  background-color: #2563eb;
+  transform: scale(1.05);
+  outline: none;
+}
+
+.btn-delete {
+  background-color: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  background-color: #b91c1c;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* =========================
+   MODAL STYLES
+========================= */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  inset: 0;
+  background-color: rgba(0,0,0,0.75);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.modal-content {
+  background-color: #1e293b;
+  color: #e5e7eb;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 100%;
+  padding: 2rem;
+  position: relative;
+}
+
+.modal-content .close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.dark-footer {
+  background-color: #020617;
+  border-top: 1px solid #1e293b;
+  color: #e5e7eb;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .bulletin-hero h1 {
+    font-size: 2rem;
+  }
+  .bulletin-hero .subtitle {
+    font-size: 1rem;
+  }
+  .dashboard-table th,
+  .dashboard-table td {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+  .inline-form {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .bulletin-hero {
+    height: 50vh;
+  }
+}
