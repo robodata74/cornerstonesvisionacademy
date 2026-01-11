@@ -1,20 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ================= META ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Blogger Portal | CVA Bulletin</title>
   <meta name="description" content="Register or login as a blogger to submit articles for approval at Cornerstones Vision Academy." />
-  <meta name="keywords" content="Cornerstones Vision Academy, CVA, South Sudan, blogging, student articles, teacher articles, CVA Bulletin" />
+  <meta name="keywords" content="Cornerstones Vision Academy, CVA, blogging, student articles, teacher articles, CVA Bulletin" />
   <meta name="author" content="Cornerstones Vision Academy" />
 
-  <!-- Main Styles -->
+  <!-- ================= STYLES ================= -->
   <link rel="stylesheet" href="../css/style.css" />
 
   <!-- Font Awesome for Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     integrity="sha512-xh6giXnN0PZ6rG0sHqv+YtN2J9bFzU1xZzU3Qz1pY1Jq7nYH2M1uM6k0yM7G6P+5A5M5x5x5x5x==" crossorigin="anonymous"
     referrerpolicy="no-referrer" />
+
+  <style>
+    /* Dark-mode form container */
+    .forms-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 40px;
+      padding: 60px 20px;
+      background: #0b2b4a;
+      color: #f1f1f1;
+    }
+
+    .forms-container section {
+      flex: 1 1 400px;
+      background: #142b50;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    .forms-container h2 {
+      color: #caa24d;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #000;
+      font-size: 0.95rem;
+    }
+
+    button.btn-primary {
+      background: #caa24d;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button.btn-primary:hover {
+      background: #b18c3e;
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: #f1f1f1;
+      margin-top: 10px;
+    }
+
+    .hero-login {
+      height: 50vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-login h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero-login p {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 900px) {
+      .forms-container {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -40,16 +131,16 @@
     </nav>
   </header>
 
-  <!-- ================= HERO / FEATURE ================= -->
-  <section class="hero hero-login" style="background-image: url('../images/blogger-hero.jpg');">
-    <div class="hero-overlay"></div>
+  <!-- ================= HERO ================= -->
+  <section class="hero hero-login" style="background-image:url('../images/heroes/hero-2-staff.jpg');">
+    <div class="hero-overlay" style="background: rgba(0,0,0,0.55);"></div>
     <div class="hero-content">
       <h1>Blogger Portal</h1>
       <p>Register or Login to submit articles for admin approval</p>
     </div>
   </section>
 
-  <!-- ================= LOGIN & REGISTRATION FORMS ================= -->
+  <!-- ================= FORMS ================= -->
   <main class="container forms-container">
 
     <!-- Login Form -->
@@ -63,12 +154,10 @@
         <input type="password" id="password" name="password" placeholder="Enter your password" required />
 
         <!-- Optional CAPTCHA -->
-        <div class="captcha-placeholder">
-          <!-- Replace with Google reCAPTCHA -->
-        </div>
+        <div class="captcha-placeholder"></div>
 
         <button type="submit" class="btn-primary">Login</button>
-        <p class="note">Forgot your password? <a href="reset-password.html">Reset here</a></p>
+        <p class="note">Forgot your password? <a href="reset-password.html" style="color:#caa24d;">Reset here</a></p>
       </form>
     </section>
 
@@ -95,12 +184,12 @@
         <input type="password" id="newPassword" name="password" placeholder="Choose a password (8+ characters)" minlength="8" required />
 
         <!-- Optional CAPTCHA -->
-        <div class="captcha-placeholder">
-          <!-- Replace with Google reCAPTCHA -->
-        </div>
+        <div class="captcha-placeholder"></div>
 
         <button type="submit" class="btn-primary">Register</button>
-        <p class="note">All registrations require admin approval. You will receive an email at <strong>blog@cornerstonesvisionacademy.org</strong> once approved.</p>
+        <p class="note">
+          All registrations require <strong>admin approval</strong>. You will receive an email at <strong>blog@cornerstonesvisionacademy.org</strong> once approved.
+        </p>
       </form>
     </section>
 
@@ -112,13 +201,6 @@
       <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
     </div>
   </footer>
-
-  <!-- ================= OPTIONAL SCRIPTS ================= -->
-  <script>
-    // Example: Toggle between login and registration for UX
-    const loginForm = document.querySelector('.login-form');
-    const registrationForm = document.querySelector('.registration-form');
-  </script>
 
 </body>
 </html>
