@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>CVA Bulletin Admin Dashboard | Cornerstones Vision Academy</title>
   <meta name="description" content="Admin dashboard for managing blogger registrations and article approvals at CVA Bulletin." />
   <meta name="keywords" content="CVA Bulletin, admin dashboard, blogger approval, article moderation, Cornerstones Vision Academy" />
   <meta name="author" content="Cornerstones Vision Academy" />
 
-  <!-- Main Styles -->
+  <!-- Styles -->
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="../css/bulletin-dark.css" />
 
@@ -42,10 +41,10 @@
     </div>
   </section>
 
-  <!-- ================= MAIN DASHBOARD ================= -->
+  <!-- ================= MAIN CONTENT ================= -->
   <main class="container dashboard-container">
 
-    <!-- Pending Blogger Registrations -->
+    <!-- --------------------- PENDING BLOGGER REGISTRATIONS --------------------- -->
     <section class="dashboard-section">
       <h2>Pending Blogger Registrations</h2>
       <table class="dashboard-table">
@@ -60,15 +59,19 @@
           </tr>
         </thead>
         <tbody>
+          <!-- Example Blogger -->
           <tr>
             <td>Valentino Achak Deng</td>
             <td>valentino@cva.org</td>
             <td>Student</td>
             <td>valentino.ad</td>
             <td>Pending</td>
-            <td>
-              <button class="btn-primary">Approve</button>
-              <button class="btn-delete">Delete</button>
+            <td class="actions">
+              <form action="backend/blogger-actions.php" method="POST" class="inline-form">
+                <input type="hidden" name="user_id" value="1">
+                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
+                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
+              </form>
             </td>
           </tr>
           <tr>
@@ -77,16 +80,19 @@
             <td>Teacher</td>
             <td>maryjohn</td>
             <td>Pending</td>
-            <td>
-              <button class="btn-primary">Approve</button>
-              <button class="btn-delete">Delete</button>
+            <td class="actions">
+              <form action="backend/blogger-actions.php" method="POST" class="inline-form">
+                <input type="hidden" name="user_id" value="2">
+                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
+                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
+              </form>
             </td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <!-- Pending Article Submissions -->
+    <!-- --------------------- PENDING ARTICLE SUBMISSIONS --------------------- -->
     <section class="dashboard-section">
       <h2>Pending Article Submissions</h2>
       <table class="dashboard-table">
@@ -105,10 +111,13 @@
             <td>Valentino Achak Deng</td>
             <td>Jan 10, 2026</td>
             <td>Pending</td>
-            <td>
-              <button class="btn-readmore" data-article="article1">Read More</button>
-              <button class="btn-primary">Approve</button>
-              <button class="btn-delete">Delete</button>
+            <td class="actions">
+              <button class="btn-readmore" data-article-id="1">Read More</button>
+              <form action="backend/article-actions.php" method="POST" class="inline-form">
+                <input type="hidden" name="article_id" value="1">
+                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
+                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
+              </form>
             </td>
           </tr>
           <tr>
@@ -116,10 +125,13 @@
             <td>Mary John</td>
             <td>Feb 5, 2026</td>
             <td>Pending</td>
-            <td>
-              <button class="btn-readmore" data-article="article2">Read More</button>
-              <button class="btn-primary">Approve</button>
-              <button class="btn-delete">Delete</button>
+            <td class="actions">
+              <button class="btn-readmore" data-article-id="2">Read More</button>
+              <form action="backend/article-actions.php" method="POST" class="inline-form">
+                <input type="hidden" name="article_id" value="2">
+                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
+                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
+              </form>
             </td>
           </tr>
         </tbody>
@@ -146,29 +158,22 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    // Modal functionality for Read More
+    // Modal functionality for Read More (AJAX ready)
     const modal = document.getElementById('readMoreModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalContent = document.getElementById('modalContent');
     const closeBtn = document.querySelector('.close-btn');
 
-    const articles = {
-      article1: {
-        title: "Celebrating Culture and Creativity",
-        content: "Cornerstones Vision Academy excelled in the Interschool Drama Festival with drama, folk dance, music, and poetry. Students showcased talent, culture, and creativity in front of parents and the community. This article details the performances, awards, and behind-the-scenes experiences."
-      },
-      article2: {
-        title: "Student Art Exhibition 2026",
-        content: "Our students’ creativity shines at the annual art exhibition featuring paintings, crafts, and multimedia projects. Teachers and visitors praised the innovative and culturally rich displays. This article provides a detailed overview of exhibits and student reflections."
-      }
-    };
-
     document.querySelectorAll('.btn-readmore').forEach(btn => {
       btn.addEventListener('click', () => {
-        const key = btn.dataset.article;
-        modalTitle.textContent = articles[key].title;
-        modalContent.textContent = articles[key].content;
-        modal.style.display = "block";
+        const articleId = btn.dataset.articleId;
+        fetch(`backend/fetch-article.php?id=${articleId}`)
+          .then(res => res.json())
+          .then(data => {
+            modalTitle.textContent = data.title;
+            modalContent.textContent = data.content;
+            modal.style.display = "block";
+          });
       });
     });
 
