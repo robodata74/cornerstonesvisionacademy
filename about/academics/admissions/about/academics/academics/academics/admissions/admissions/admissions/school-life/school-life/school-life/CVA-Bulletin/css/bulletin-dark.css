@@ -4,7 +4,7 @@
    ======================================================= */
 
 /* ==========================
-   GLOBAL DARK THEME
+   GLOBAL STYLES
 ========================== */
 body.bulletin-dark {
   background-color: #0f172a;
@@ -12,6 +12,8 @@ body.bulletin-dark {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   line-height: 1.7;
   scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 /* --------------------------
@@ -23,13 +25,15 @@ a {
   transition: color 0.3s ease;
 }
 
-a:hover {
-  color: #3b82f6;
+a:hover,
+a:focus {
+  color: #2563eb;
+  outline: none;
 }
 
-/* --------------------------
+/* ==========================
    HERO SECTION
--------------------------- */
+========================== */
 .bulletin-hero {
   position: relative;
   height: 70vh;
@@ -76,9 +80,9 @@ a:hover {
   gap: 1rem;
 }
 
-/* --------------------------
-   ARTICLE CONTAINER
--------------------------- */
+/* ==========================
+   ARTICLE BODY
+========================== */
 .bulletin-article {
   max-width: 850px;
   margin: 4rem auto;
@@ -104,6 +108,7 @@ a:hover {
 -------------------------- */
 .read-more-content {
   display: none;
+  margin-top: 1rem;
 }
 
 .read-more-btn {
@@ -114,18 +119,20 @@ a:hover {
   padding: 10px 20px;
   border-radius: 30px;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.read-more-btn:hover {
+.read-more-btn:hover,
+.read-more-btn:focus {
   background: #2563eb;
   transform: scale(1.05);
+  outline: none;
 }
 
-/* --------------------------
+/* ==========================
    ARTICLE FOOTER
--------------------------- */
+========================== */
 .article-footer {
   margin-top: 4rem;
   text-align: center;
@@ -141,13 +148,15 @@ a:hover {
   transition: background 0.3s ease;
 }
 
-.article-footer .btn-primary:hover {
+.article-footer .btn-primary:hover,
+.article-footer .btn-primary:focus {
   background: #2563eb;
+  outline: none;
 }
 
-/* --------------------------
-   BULLETIN CARDS (INDEX PAGE)
--------------------------- */
+/* ==========================
+   BULLETIN GRID / CARDS
+========================== */
 .bulletin-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -159,10 +168,16 @@ a:hover {
   background-color: #1e293b;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.bulletin-card:hover,
+.bulletin-card:focus-within {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
 }
 
 .bulletin-card img {
@@ -171,14 +186,11 @@ a:hover {
   object-fit: cover;
 }
 
-.bulletin-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
-}
-
 .bulletin-content {
   padding: 1.8rem 1.5rem;
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .bulletin-content h2 {
@@ -191,6 +203,7 @@ a:hover {
   font-size: 0.95rem;
   margin-bottom: 1rem;
   color: #d1d5db;
+  flex-grow: 1;
 }
 
 .bulletin-content .meta {
@@ -214,14 +227,16 @@ a:hover {
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
-.bulletin-content .btn-primary:hover {
+.bulletin-content .btn-primary:hover,
+.bulletin-content .btn-primary:focus {
   background: #2563eb;
   transform: scale(1.03);
+  outline: none;
 }
 
-/* --------------------------
+/* ==========================
    FOOTER
--------------------------- */
+========================== */
 .dark-footer {
   background-color: #020617;
   border-top: 1px solid #1e293b;
@@ -230,9 +245,9 @@ a:hover {
   text-align: center;
 }
 
-/* --------------------------
+/* ==========================
    RESPONSIVE
--------------------------- */
+========================== */
 @media (max-width: 900px) {
   .bulletin-hero h1 {
     font-size: 2rem;
