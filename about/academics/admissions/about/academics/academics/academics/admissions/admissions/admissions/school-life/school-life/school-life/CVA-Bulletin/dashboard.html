@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blogger Dashboard | CVA Bulletin</title>
+  <meta name="description" content="Dashboard for approved CVA bloggers to submit, edit, and manage articles for admin review and publication." />
+  <meta name="keywords" content="CVA Bulletin, Blogger Dashboard, Cornerstones Vision Academy, Article Management, Admin Approval" />
+  <meta name="author" content="Cornerstones Vision Academy" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/bulletin-dark.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" />
+</head>
+<body class="bulletin-dark">
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo"><a href="../index.html">Cornerstones Vision Academy</a></div>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../academics.html">Academics</a></li>
+        <li><a href="index.html" class="active">CVA Bulletin</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= DASHBOARD HERO ================= -->
+  <section class="bulletin-hero" style="background-image: url('../images/bulletin-hero-1.jpg');">
+    <div class="bulletin-hero-overlay"></div>
+    <div class="bulletin-hero-content">
+      <h1>Blogger Dashboard</h1>
+      <p class="subtitle">Submit, manage, and track your articles for admin review and publication.</p>
+    </div>
+  </section>
+
+  <!-- ================= DASHBOARD CONTENT ================= -->
+  <main class="container dashboard-container">
+
+    <!-- Instructions -->
+    <section class="dashboard-instructions">
+      <h2>Instructions</h2>
+      <ul>
+        <li>Use the form below to submit new articles.</li>
+        <li>All submissions require admin approval before appearing on the Bulletin.</li>
+        <li>Pending articles can be edited or deleted before approval.</li>
+        <li>Approved articles can be read via “Read More” or deleted if needed.</li>
+      </ul>
+    </section>
+
+    <!-- Article Submission Form -->
+    <section class="dashboard-form">
+      <h2>Submit New Article</h2>
+      <form id="articleForm" action="backend/submit-article.php" method="POST" enctype="multipart/form-data">
+        <label for="title">Article Title</label>
+        <input type="text" id="title" name="title" placeholder="Enter article title" required />
+
+        <label for="subtitle">Subtitle / Short Description</label>
+        <input type="text" id="subtitle" name="subtitle" placeholder="Enter subtitle" required />
+
+        <label for="heroImage">Hero Image</label>
+        <input type="file" id="heroImage" name="heroImage" accept="image/*" required />
+
+        <label for="content">Content</label>
+        <textarea id="content" name="content" rows="10" placeholder="Write your article here..." required></textarea>
+
+        <button type="submit" class="btn-primary">Submit Article</button>
+      </form>
+    </section>
+
+    <!-- Pending Articles -->
+    <section class="dashboard-articles">
+      <h2>Pending Articles for Approval</h2>
+      <div class="article-cards">
+
+        <!-- Example Pending Card -->
+        <div class="article-card pending">
+          <img src="../images/bulletin-2-placeholder.jpg" alt="Article Image">
+          <div class="article-info">
+            <h3>Student Art Exhibition 2026</h3>
+            <p>By Jane Doe • Feb 5, 2026</p>
+            <p>Status: Pending Approval</p>
+            <div class="actions">
+              <button class="btn-secondary">Edit</button>
+              <button class="btn-secondary">Delete</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Approved Articles -->
+    <section class="dashboard-articles">
+      <h2>Approved Articles</h2>
+      <div class="article-cards">
+
+        <!-- Example Approved Card -->
+        <div class="article-card approved">
+          <img src="../images/bulletin-1-folkdance.jpg" alt="Article Image">
+          <div class="article-info">
+            <h3>Celebrating Culture and Creativity: The Triumph of CVA</h3>
+            <p>By Valentino Achak Deng • Jan 10, 2026</p>
+            <p>Status: Approved</p>
+            <div class="actions">
+              <a href="celebrating-culture-and-creativity.html" class="btn-primary">Read More</a>
+              <button class="btn-secondary">Delete</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer dark-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
