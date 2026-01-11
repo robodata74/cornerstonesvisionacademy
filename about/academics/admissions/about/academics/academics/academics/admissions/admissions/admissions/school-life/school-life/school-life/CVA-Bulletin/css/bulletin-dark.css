@@ -1,18 +1,22 @@
-/* ===========================
-   BULLETIN DARK THEME
-=========================== */
+/* =======================================================
+   CVA Bulletin Dark Theme
+   Fully responsive, Brookhurst-inspired styling
+   ======================================================= */
 
-/* ---------------------------
-   GLOBAL BODY & TYPOGRAPHY
----------------------------- */
+/* ==========================
+   GLOBAL DARK THEME
+========================== */
 body.bulletin-dark {
-  background-color: #0f172a; /* Dark navy background */
-  color: #e5e7eb;            /* Soft light text for readability */
+  background-color: #0f172a;
+  color: #e5e7eb;
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.8;
-  overflow-x: hidden;
+  line-height: 1.7;
+  scroll-behavior: smooth;
 }
 
+/* --------------------------
+   LINKS
+-------------------------- */
 a {
   color: #60a5fa;
   text-decoration: none;
@@ -21,22 +25,11 @@ a {
 
 a:hover {
   color: #3b82f6;
-  text-decoration: underline;
 }
 
-h1, h2, h3, h4 {
-  font-weight: 700;
-  line-height: 1.3;
-  color: #f8fafc;
-}
-
-h1 { font-size: 2.8rem; }
-h2 { font-size: 2rem; }
-h3 { font-size: 1.5rem; }
-
-/* ---------------------------
+/* --------------------------
    HERO SECTION
----------------------------- */
+-------------------------- */
 .bulletin-hero {
   position: relative;
   height: 70vh;
@@ -51,19 +44,20 @@ h3 { font-size: 1.5rem; }
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
 }
 
 .bulletin-hero-content {
   position: relative;
   z-index: 2;
   max-width: 900px;
-  margin: 0 auto;
   padding: 6rem 2rem;
   text-align: center;
 }
 
 .bulletin-hero h1 {
   font-size: 2.8rem;
+  font-weight: 700;
   color: #ffffff;
 }
 
@@ -77,60 +71,61 @@ h3 { font-size: 1.5rem; }
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #9ca3af;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
-/* ---------------------------
-   ARTICLE BODY
----------------------------- */
+/* --------------------------
+   ARTICLE CONTAINER
+-------------------------- */
 .bulletin-article {
   max-width: 850px;
   margin: 4rem auto;
   padding: 0 1rem;
   line-height: 1.8;
+  font-size: 1.05rem;
 }
 
 .bulletin-article p {
   margin-bottom: 1.6rem;
-  font-size: 1.05rem;
-  color: #e5e7eb;
 }
 
 .bulletin-article img {
   width: 100%;
   border-radius: 10px;
   margin: 2.5rem 0;
+  display: block;
   object-fit: cover;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
-/* ---------------------------
-   READ MORE / COLLAPSIBLE
----------------------------- */
+/* --------------------------
+   READ MORE TOGGLE
+-------------------------- */
 .read-more-content {
   display: none;
-  margin-top: 1rem;
 }
 
 .read-more-btn {
   display: inline-block;
   margin-top: 1rem;
-  padding: 10px 20px;
-  background-color: #2563eb;
+  background: #3b82f6;
   color: #fff;
-  border-radius: 6px;
-  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 30px;
   font-weight: 600;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
 }
 
 .read-more-btn:hover {
-  background-color: #1d4ed8;
+  background: #2563eb;
   transform: scale(1.05);
 }
 
-/* ---------------------------
+/* --------------------------
    ARTICLE FOOTER
----------------------------- */
+-------------------------- */
 .article-footer {
   margin-top: 4rem;
   text-align: center;
@@ -140,51 +135,56 @@ h3 { font-size: 1.5rem; }
   padding: 12px 28px;
   border-radius: 30px;
   font-weight: 600;
-  background-color: #2563eb;
+  background: #3b82f6;
   color: #fff;
-  transition: background-color 0.3s ease;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .article-footer .btn-primary:hover {
-  background-color: #1d4ed8;
+  background: #2563eb;
 }
 
-/* ---------------------------
-   BULLETIN GRID / CARDS
----------------------------- */
+/* --------------------------
+   BULLETIN CARDS (INDEX PAGE)
+-------------------------- */
 .bulletin-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin: 4rem 0;
+  padding: 4rem 1rem;
 }
 
 .bulletin-card {
   background-color: #1e293b;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.bulletin-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.5);
 }
 
 .bulletin-card img {
   width: 100%;
-  height: 200px;
+  height: 180px;
   object-fit: cover;
 }
 
+.bulletin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
 .bulletin-content {
-  padding: 1.5rem;
+  padding: 1.8rem 1.5rem;
+  flex-grow: 1;
 }
 
 .bulletin-content h2 {
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-  color: #f8fafc;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #60a5fa;
 }
 
 .bulletin-content p {
@@ -196,38 +196,67 @@ h3 { font-size: 1.5rem; }
 .bulletin-content .meta {
   font-size: 0.85rem;
   color: #9ca3af;
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 1rem;
 }
 
-/* Buttons inside cards */
 .bulletin-content .btn-primary {
-  font-size: 0.9rem;
-  padding: 8px 20px;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  padding: 10px 0;
+  font-weight: 600;
+  border-radius: 25px;
+  background: #3b82f6;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
-/* ---------------------------
+.bulletin-content .btn-primary:hover {
+  background: #2563eb;
+  transform: scale(1.03);
+}
+
+/* --------------------------
    FOOTER
----------------------------- */
+-------------------------- */
 .dark-footer {
   background-color: #020617;
   border-top: 1px solid #1e293b;
-  color: #9ca3af;
-  padding: 30px 0;
+  color: #e5e7eb;
+  padding: 2rem 1rem;
   text-align: center;
-  font-size: 0.9rem;
 }
 
-/* ---------------------------
+/* --------------------------
    RESPONSIVE
----------------------------- */
+-------------------------- */
 @media (max-width: 900px) {
-  .bulletin-hero h1 { font-size: 2.2rem; }
-  .bulletin-hero .subtitle { font-size: 1rem; }
-  .bulletin-article { margin: 3rem 1rem; }
-  .bulletin-content h2 { font-size: 1.1rem; }
+  .bulletin-hero h1 {
+    font-size: 2rem;
+  }
+
+  .bulletin-hero .subtitle {
+    font-size: 1rem;
+  }
+
+  .bulletin-article {
+    padding: 0 0.8rem;
+  }
+
+  .bulletin-grid {
+    gap: 1.5rem;
+  }
 }
 
-@media (max-width: 500px) {
-  .bulletin-hero { height: 50vh; }
-  .bulletin-hero-content { padding: 3rem 1rem; }
+@media (max-width: 600px) {
+  .bulletin-hero {
+    height: 50vh;
+  }
+
+  .bulletin-card img {
+    height: 150px;
+  }
 }
