@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CVA Bulletin Admin Dashboard | Cornerstones Vision Academy</title>
+  <meta name="description" content="Admin dashboard for managing blogger registrations and article approvals at CVA Bulletin." />
+  <meta name="keywords" content="CVA Bulletin, admin dashboard, blogger approval, article moderation, Cornerstones Vision Academy" />
+  <meta name="author" content="Cornerstones Vision Academy" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/bulletin-dark.css" />
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body class="bulletin-dark">
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <nav class="navbar">
+      <div class="logo"><a href="../index.html">Cornerstones Vision Academy</a></div>
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../academics.html">Academics</a></li>
+        <li><a href="index.html">CVA Bulletin</a></li>
+        <li><a href="dashboard-dark.html" class="active btn-outline">Dashboard</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="bulletin-hero" style="background-image: url('../images/bulletin-hero-2.jpg');">
+    <div class="bulletin-hero-overlay"></div>
+    <div class="bulletin-hero-content">
+      <h1>Admin Dashboard</h1>
+      <p class="subtitle">Manage Blogger Registrations & Article Approvals</p>
+    </div>
+  </section>
+
+  <!-- ================= MAIN CONTENT ================= -->
+  <main class="container dashboard-container">
+
+    <!-- --------------------- PENDING BLOGGER REGISTRATIONS --------------------- -->
+    <section class="dashboard-section">
+      <h2>Pending Blogger Registrations</h2>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Role</th>
+            <th>Username</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Valentino Achak Deng</td>
+            <td>valentino@cva.org</td>
+            <td>Student</td>
+            <td>valentino.ad</td>
+            <td>Pending</td>
+            <td>
+              <button class="btn-primary">Approve</button>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Mary John</td>
+            <td>mary.john@cva.org</td>
+            <td>Teacher</td>
+            <td>maryjohn</td>
+            <td>Pending</td>
+            <td>
+              <button class="btn-primary">Approve</button>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- --------------------- PENDING ARTICLE SUBMISSIONS --------------------- -->
+    <section class="dashboard-section">
+      <h2>Pending Article Submissions</h2>
+      <table class="dashboard-table">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Celebrating Culture and Creativity</td>
+            <td>Valentino Achak Deng</td>
+            <td>Jan 10, 2026</td>
+            <td>Pending</td>
+            <td>
+              <button class="btn-readmore" data-article="article1">Read More</button>
+              <button class="btn-primary">Approve</button>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Student Art Exhibition 2026</td>
+            <td>Mary John</td>
+            <td>Feb 5, 2026</td>
+            <td>Pending</td>
+            <td>
+              <button class="btn-readmore" data-article="article2">Read More</button>
+              <button class="btn-primary">Approve</button>
+              <button class="btn-delete">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer dark-footer">
+    <div class="container">
+      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ================= READ MORE MODAL ================= -->
+  <div id="readMoreModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3 id="modalTitle"></h3>
+      <p id="modalContent"></p>
+    </div>
+  </div>
+
+  <!-- ================= SCRIPTS ================= -->
+  <script>
+    // Modal functionality for Read More
+    const modal = document.getElementById('readMoreModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalContent = document.getElementById('modalContent');
+    const closeBtn = document.querySelector('.close-btn');
+
+    const articles = {
+      article1: {
+        title: "Celebrating Culture and Creativity",
+        content: "Cornerstones Vision Academy excelled in the Interschool Drama Festival with drama, folk dance, music, and poetry. Students showcased talent, culture, and creativity in front of parents and the community. This article details the performances, awards, and behind-the-scenes experiences."
+      },
+      article2: {
+        title: "Student Art Exhibition 2026",
+        content: "Our students’ creativity shines at the annual art exhibition featuring paintings, crafts, and multimedia projects. Teachers and visitors praised the innovative and culturally rich displays. This article provides a detailed overview of exhibits and student reflections."
+      }
+    };
+
+    document.querySelectorAll('.btn-readmore').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.article;
+        modalTitle.textContent = articles[key].title;
+        modalContent.textContent = articles[key].content;
+        modal.style.display = "block";
+      });
+    });
+
+    closeBtn.onclick = () => { modal.style.display = "none"; }
+    window.onclick = e => { if(e.target == modal) modal.style.display = "none"; }
+  </script>
+
+</body>
+</html>
