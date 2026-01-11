@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>CVA Bulletin | Cornerstones Vision Academy</title>
-  <meta name="description" content="Latest news, cultural events, and student achievements at Cornerstones Vision Academy." />
-  <meta name="keywords" content="CVA, Cornerstones Vision Academy, News, Events, Student Arts, Drama Festival, South Sudan" />
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    integrity="sha512-xh6giXnN0PZ6rG0sHqv+YtN2J9bFzU1xZzU3Qz1pY1Jq7nYH2M1uM6k0yM7G6P+5A5M5x5x5x5x==" crossorigin="anonymous"
-    referrerpolicy="no-referrer" />
+  <meta name="description" content="Stay updated with the latest news, events, and student achievements at Cornerstones Vision Academy.">
+  <meta name="keywords" content="CVA Bulletin, Cornerstones Vision Academy news, articles, events, student arts, South Sudan">
+  <meta name="author" content="Cornerstones Vision Academy">
+
+  <!-- ================= STYLES ================= -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <!-- Font Awesome Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
 </head>
+
 <body>
 
   <!-- ================= NAVIGATION ================= -->
@@ -29,7 +40,7 @@
             <li><a href="../school-life/gallery.html">Gallery</a></li>
           </ul>
         </li>
-        <li><a class="active" href="index.html">CVA Bulletin</a></li>
+        <li><a href="index.html" class="active">CVA Bulletin</a></li>
         <li><a href="../contact.html">Contact</a></li>
         <li class="blogger-login">
           <a href="blogger-login.html">Blogger Registration / Login</a>
@@ -38,59 +49,77 @@
     </nav>
   </header>
 
-  <!-- ================= HERO / PAGE TITLE ================= -->
-  <section class="hero-article" style="background-image: url('../images/bulletin-hero-2.jpg');">
+  <!-- ================= HERO ================= -->
+  <section class="hero" style="background-image: url('../images/backgrounds/bulletin-bg.jpg');">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>CVA Bulletin</h1>
-      <p>Stay updated with our latest news, events, and student achievements</p>
+      <p>News, updates, and stories celebrating education, culture, and student achievements.</p>
     </div>
   </section>
 
-  <!-- ================= ARTICLE PREVIEWS ================= -->
-  <main class="container bulletin-grid">
+  <!-- ================= ARTICLE GRID ================= -->
+  <main class="container content-section">
+    <h2 class="section-title">Latest Articles</h2>
+    <div class="bulletin-grid">
 
-    <!-- Featured Article Card -->
-    <article class="bulletin-card">
-      <img src="../images/bulletin-1-folkdance.jpg" alt="CVA Drama Festival">
-      <div class="bulletin-content">
-        <h2>Celebrating Culture and Creativity: The Triumph of CVA</h2>
-        <p>Cornerstones Vision Academy excelled in the Interschool Drama Festival with drama, folk dance, music, and poetry. Our students showcased talent, culture, and creativity.</p>
-        <div class="meta">
-          <span class="author">By Valentino Achak Deng</span>
-          <span class="date">Jan 10, 2026</span>
+      <!-- Article 1 -->
+      <article class="bulletin-card">
+        <img src="../images/bulletin/bulletin-1-folkdance.jpg" alt="CVA Drama Festival">
+        <div class="bulletin-content">
+          <h3>Celebrating Culture and Creativity: The Triumph of CVA</h3>
+          <p>Cornerstones Vision Academy excelled in the Interschool Drama Festival with drama, folk dance, music, and poetry. Our students showcased talent, culture, and creativity.</p>
+          <div class="meta">
+            <span class="author"><i class="fa-solid fa-user"></i> Valentino Achak Deng</span>
+            <span class="date"><i class="fa-solid fa-calendar-days"></i> Jan 10, 2026</span>
+          </div>
+          <a href="celebrating-culture-and-creativity.html" class="btn-primary">Read More</a>
         </div>
-        <a href="celebrating-culture-and-creativity.html" class="btn-primary">Read More</a>
-      </div>
-    </article>
+      </article>
 
-    <!-- Placeholder Article Cards for Future Posts -->
-    <article class="bulletin-card">
-      <img src="../images/bulletin-2-placeholder.jpg" alt="Upcoming Event">
-      <div class="bulletin-content">
-        <h2>Student Art Exhibition 2026</h2>
-        <p>Our students’ creativity shines at the annual art exhibition featuring paintings, crafts, and multimedia projects.</p>
-        <div class="meta">
-          <span class="author">By CVA Staff</span>
-          <span class="date">Feb 5, 2026</span>
+      <!-- Article 2 -->
+      <article class="bulletin-card">
+        <img src="../images/bulletin/bulletin-hero-why-cva.jpg" alt="Why Cornerstones Vision Academy?">
+        <div class="bulletin-content">
+          <h3>Why Cornerstones Vision Academy?</h3>
+          <p>Discover the values, vision, and teaching philosophy that make CVA a leading institution for holistic education. Learn how we nurture excellence and character in every student.</p>
+          <div class="meta">
+            <span class="author"><i class="fa-solid fa-user"></i> CVA Staff</span>
+            <span class="date"><i class="fa-solid fa-calendar-days"></i> Feb 2, 2026</span>
+          </div>
+          <a href="why-cornerstones-vision-academy.html" class="btn-primary">Read More</a>
         </div>
-        <a href="#" class="btn-primary">Read More</a>
-      </div>
-    </article>
+      </article>
 
-    <article class="bulletin-card">
-      <img src="../images/bulletin-3-placeholder.jpg" alt="Upcoming Event">
-      <div class="bulletin-content">
-        <h2>Annual Sports Day Highlights</h2>
-        <p>Celebrating teamwork, sportsmanship, and student achievements in athletics and games across all school levels.</p>
-        <div class="meta">
-          <span class="author">By CVA Staff</span>
-          <span class="date">Mar 12, 2026</span>
+      <!-- Article 3 -->
+      <article class="bulletin-card">
+        <img src="../images/bulletin/bulletin-2-placeholder.jpg" alt="Annual Student Art Exhibition">
+        <div class="bulletin-content">
+          <h3>Annual Student Art Exhibition</h3>
+          <p>Our students’ creativity shines at the annual art exhibition featuring paintings, crafts, and multimedia projects. Explore how we celebrate artistic talent and innovation.</p>
+          <div class="meta">
+            <span class="author"><i class="fa-solid fa-user"></i> CVA Staff</span>
+            <span class="date"><i class="fa-solid fa-calendar-days"></i> Mar 5, 2026</span>
+          </div>
+          <a href="#" class="btn-primary">Read More</a>
         </div>
-        <a href="#" class="btn-primary">Read More</a>
-      </div>
-    </article>
+      </article>
 
+      <!-- Article 4 -->
+      <article class="bulletin-card">
+        <img src="../images/bulletin/bulletin-3-placeholder.jpg" alt="Annual Sports Day">
+        <div class="bulletin-content">
+          <h3>Annual Sports Day Highlights</h3>
+          <p>Celebrating teamwork, sportsmanship, and student achievements in athletics and games across all school levels. Inspiring confidence and camaraderie among learners.</p>
+          <div class="meta">
+            <span class="author"><i class="fa-solid fa-user"></i> CVA Staff</span>
+            <span class="date"><i class="fa-solid fa-calendar-days"></i> Mar 12, 2026</span>
+          </div>
+          <a href="#" class="btn-primary">Read More</a>
+        </div>
+      </article>
+
+    </div>
   </main>
 
   <!-- ================= FOOTER ================= -->
