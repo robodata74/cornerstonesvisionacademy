@@ -1,3 +1,7 @@
+<?php
+session_start();
+require_once 'backend/config.php'; // DB connection using PDO
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +30,7 @@
         <li><a href="../about.html">About</a></li>
         <li><a href="../academics.html">Academics</a></li>
         <li><a href="index.html">CVA Bulletin</a></li>
-        <li><a href="dashboard-dark.html" class="active btn-outline">Dashboard</a></li>
+        <li><a href="dashboard-dark.php" class="active btn-outline">Dashboard</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -44,20 +48,14 @@
   <!-- ================= MAIN CONTENT ================= -->
   <main class="container dashboard-container">
 
-    <!-- --------------------- ADMIN FEEDBACK MESSAGES --------------------- -->
-    <?php
-    session_start();
-    if(isset($_SESSION['success'])) {
-        echo '<div class="admin-alert success">'.htmlspecialchars($_SESSION['success']).'</div>';
-        unset($_SESSION['success']);
-    }
-    if(isset($_SESSION['error'])) {
-        echo '<div class="admin-alert error">'.htmlspecialchars($_SESSION['error']).'</div>';
-        unset($_SESSION['error']);
-    }
-    ?>
+    <!-- ================= ADMIN FEEDBACK ================= -->
+    <?php if(!empty($_SESSION['success'])): ?>
+      <div class="admin-alert success"><?= htmlspecialchars($_SESSION['success']); unset($_SESSION['success']); ?></div>
+    <?php elseif(!empty($_SESSION['error'])): ?>
+      <div class="admin-alert error"><?= htmlspecialchars($_SESSION['error']); unset($_SESSION['error']); ?></div>
+    <?php endif; ?>
 
-    <!-- --------------------- PENDING BLOGGER REGISTRATIONS --------------------- -->
+    <!-- ================= PENDING BLOGGERS ================= -->
     <section class="dashboard-section">
       <h2>Pending Blogger Registrations</h2>
       <table class="dashboard-table">
@@ -72,40 +70,30 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Example Blogger (replace with dynamic PHP rows) -->
+          <?php
+          $stmt = $pdo->query("SELECT id, name, email, role, username, status FROM bloggers WHERE status='Pending' ORDER BY id ASC");
+          while ($blogger = $stmt->fetch(PDO::FETCH_ASSOC)):
+          ?>
           <tr>
-            <td>Valentino Achak Deng</td>
-            <td>valentino@cva.org</td>
-            <td>Student</td>
-            <td>valentino.ad</td>
-            <td>Pending</td>
+            <td><?= htmlspecialchars($blogger['name']) ?></td>
+            <td><?= htmlspecialchars($blogger['email']) ?></td>
+            <td><?= htmlspecialchars($blogger['role']) ?></td>
+            <td><?= htmlspecialchars($blogger['username']) ?></td>
+            <td><?= htmlspecialchars($blogger['status']) ?></td>
             <td class="actions">
               <form action="backend/blogger-actions.php" method="POST" class="inline-form">
-                <input type="hidden" name="user_id" value="1">
+                <input type="hidden" name="user_id" value="<?= $blogger['id'] ?>">
                 <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
                 <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
               </form>
             </td>
           </tr>
-          <tr>
-            <td>Mary John</td>
-            <td>mary.john@cva.org</td>
-            <td>Teacher</td>
-            <td>maryjohn</td>
-            <td>Pending</td>
-            <td class="actions">
-              <form action="backend/blogger-actions.php" method="POST" class="inline-form">
-                <input type="hidden" name="user_id" value="2">
-                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
-                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
-              </form>
-            </td>
-          </tr>
+          <?php endwhile; ?>
         </tbody>
       </table>
     </section>
 
-    <!-- --------------------- PENDING ARTICLE SUBMISSIONS --------------------- -->
+    <!-- ================= PENDING ARTICLES ================= -->
     <section class="dashboard-section">
       <h2>Pending Article Submissions</h2>
       <table class="dashboard-table">
@@ -119,36 +107,30 @@
           </tr>
         </thead>
         <tbody>
+          <?php
+          $stmt = $pdo->query("SELECT a.id, a.title, a.status, a.created_at, b.name AS author_name 
+                               FROM articles a 
+                               JOIN bloggers b ON a.author_id = b.id
+                               WHERE a.status='Pending'
+                               ORDER BY a.created_at DESC");
+          while($article = $stmt->fetch(PDO::FETCH_ASSOC)):
+          ?>
           <tr>
-            <td>Celebrating Culture and Creativity</td>
-            <td>Valentino Achak Deng</td>
-            <td>Jan 10, 2026</td>
-            <td>Pending</td>
+            <td><?= htmlspecialchars($article['title']) ?></td>
+            <td><?= htmlspecialchars($article['author_name']) ?></td>
+            <td><?= date('M d, Y', strtotime($article['created_at'])) ?></td>
+            <td><?= htmlspecialchars($article['status']) ?></td>
             <td class="actions">
-              <button class="btn-readmore" data-article-id="1">Read More</button>
+              <button class="btn-readmore" data-article-id="<?= $article['id'] ?>">Read More</button>
               <form action="backend/article-actions.php" method="POST" class="inline-form">
-                <input type="hidden" name="article_id" value="1">
+                <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
                 <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
                 <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
                 <button type="submit" name="action" value="feature" class="btn-feature">Feature</button>
               </form>
             </td>
           </tr>
-          <tr>
-            <td>Student Art Exhibition 2026</td>
-            <td>Mary John</td>
-            <td>Feb 5, 2026</td>
-            <td>Pending</td>
-            <td class="actions">
-              <button class="btn-readmore" data-article-id="2">Read More</button>
-              <form action="backend/article-actions.php" method="POST" class="inline-form">
-                <input type="hidden" name="article_id" value="2">
-                <button type="submit" name="action" value="approve" class="btn-primary">Approve</button>
-                <button type="submit" name="action" value="delete" class="btn-delete">Delete</button>
-                <button type="submit" name="action" value="feature" class="btn-feature">Feature</button>
-              </form>
-            </td>
-          </tr>
+          <?php endwhile; ?>
         </tbody>
       </table>
     </section>
@@ -158,7 +140,7 @@
   <!-- ================= FOOTER ================= -->
   <footer class="main-footer dark-footer">
     <div class="container">
-      <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
+      <p>&copy; <?= date('Y') ?> Cornerstones Vision Academy. All Rights Reserved.</p>
     </div>
   </footer>
 
@@ -173,7 +155,6 @@
 
   <!-- ================= SCRIPTS ================= -->
   <script>
-    // Modal functionality for Read More
     const modal = document.getElementById('readMoreModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalContent = document.getElementById('modalContent');
@@ -185,27 +166,28 @@
         fetch(`backend/fetch-article.php?id=${articleId}`)
           .then(res => res.json())
           .then(data => {
+            if(data.error) {
+              alert(data.error);
+              return;
+            }
             modalTitle.textContent = data.title;
             modalContent.textContent = data.content;
-            modal.setAttribute('aria-hidden', 'false');
+            modal.setAttribute('aria-hidden','false');
             modal.style.display = "block";
           })
-          .catch(err => {
-            console.error("Error fetching article:", err);
-            alert("Failed to fetch article content. Please try again.");
-          });
+          .catch(err => console.error("Fetch article error:", err));
       });
     });
 
     closeBtn.addEventListener('click', () => {
       modal.style.display = "none";
-      modal.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('aria-hidden','true');
     });
 
     window.addEventListener('click', e => {
-      if (e.target === modal) {
+      if(e.target === modal) {
         modal.style.display = "none";
-        modal.setAttribute('aria-hidden', 'true');
+        modal.setAttribute('aria-hidden','true');
       }
     });
   </script>
