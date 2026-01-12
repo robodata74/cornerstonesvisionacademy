@@ -4,9 +4,9 @@
   <!-- ================= META ================= -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <title>Academics | Cornerstones Vision Academy</title>
-
   <meta name="description" content="Explore the academic programs at Cornerstones Vision Academy—primary and secondary education designed to build strong foundations and future-ready learners." />
   <meta name="keywords" content="CVA academics, primary school, secondary school, quality education, Cornerstones Vision Academy" />
   <meta name="author" content="Cornerstones Vision Academy" />
@@ -14,7 +14,7 @@
   <!-- ================= STYLES ================= -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Icons -->
+  <!-- ================= ICONS ================= -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -22,16 +22,16 @@
     referrerpolicy="no-referrer"
   />
 </head>
+<body oncontextmenu="return false;">
 
-<body>
-
-  <!-- ================= HEADER / NAV ================= -->
-  <header class="main-header">
-    <nav class="navbar">
+  <!-- ================= HEADER ================= -->
+  <header class="main-header" role="banner">
+    <nav class="navbar" aria-label="Main Navigation">
       <div class="logo">
-        <a href="index.html">Cornerstones Vision Academy</a>
+        <a href="index.html" aria-label="Cornerstones Vision Academy Home">
+          Cornerstones Vision Academy
+        </a>
       </div>
-
       <ul class="nav-menu">
         <li><a href="index.html">Home</a></li>
 
@@ -64,74 +64,58 @@
 
         <li><a href="CVA-Bulletin/index.html">CVA Bulletin</a></li>
         <li><a href="contact.html">Contact</a></li>
-
-        <li class="staff-login disabled">
-          <a href="#">Staff Login</a>
-        </li>
+        <li class="staff-login disabled"><a href="#" aria-disabled="true">Staff Login</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="hero hero-academics" style="background-image: url('images/heroes/academics-hero.jpg');">
+  <section class="hero hero-academics" style="background-image: url('images/heroes/academics-hero.jpg');" aria-label="Academics Hero Section">
     <div class="hero-overlay"></div>
-    <div class="hero-content">
+    <div class="hero-content container">
       <h1>Our Academic Programs</h1>
-      <p>
-        Building strong foundations today for confident, capable learners
-        tomorrow.
-      </p>
+      <p>Building strong foundations today for confident, capable learners tomorrow.</p>
+      <a href="#primary" class="btn-primary">Explore Primary</a>
+      <a href="#secondary" class="btn-secondary">Explore Secondary</a>
     </div>
   </section>
 
   <!-- ================= ACADEMIC PHILOSOPHY ================= -->
-  <section class="content-section container">
+  <section class="content-section container" id="philosophy">
     <h2>Academic Excellence with Purpose</h2>
     <p>
-      At Cornerstones Vision Academy, academics are designed to develop critical
-      thinking, curiosity, and a lifelong love of learning. Our curriculum
-      balances rigorous instruction with creativity, values education, and
-      real-world relevance.
+      At Cornerstones Vision Academy, academics are designed to develop critical thinking, curiosity, and a lifelong love of learning. Our curriculum balances rigorous instruction with creativity, values education, and real-world relevance.
     </p>
     <p>
-      We recognize that every learner is unique. Through supportive teaching,
-      structured assessment, and continuous feedback, we help students reach
-      their full academic potential.
+      We recognize that every learner is unique. Through supportive teaching, structured assessment, and continuous feedback, we help students reach their full academic potential.
     </p>
   </section>
 
   <!-- ================= INTERLUDE ================= -->
-  <section class="interlude patterned-bg">
+  <section class="interlude patterned-bg" aria-label="Learning Interlude">
     <div class="container">
       <h3>Learning That Builds Futures</h3>
       <p>
-        Our programs are designed to prepare learners for examinations,
-        higher education, and responsible citizenship.
+        Our programs prepare learners for examinations, higher education, and responsible citizenship.
       </p>
     </div>
   </section>
 
-  <!-- ================= PROGRAM PATHWAYS ================= -->
-  <section class="content-section container">
+  <!-- ================= LEARNING PATHWAYS ================= -->
+  <section class="content-section container" id="pathways">
     <h2>Our Learning Pathways</h2>
-
     <div class="two-column">
-      <div>
+      <div class="column">
         <h3>Primary School</h3>
         <p>
-          The primary program lays a strong foundation in literacy, numeracy,
-          science, and social development. Learners are encouraged to explore,
-          ask questions, and build confidence in a nurturing environment.
+          Laying a strong foundation in literacy, numeracy, science, and social development. Learners explore, ask questions, and build confidence in a nurturing environment.
         </p>
         <a href="primary.html" class="btn-secondary">Explore Primary</a>
       </div>
-
-      <div>
+      <div class="column">
         <h3>Secondary School</h3>
         <p>
-          Our secondary program focuses on academic depth, critical thinking,
-          and leadership development. Students are guided to become independent
-          learners ready for examinations and future pathways.
+          Focused on academic depth, critical thinking, and leadership development. Students become independent learners ready for examinations and future pathways.
         </p>
         <a href="secondary.html" class="btn-secondary">Explore Secondary</a>
       </div>
@@ -142,25 +126,19 @@
   <section class="interlude textured-bg">
     <div class="container">
       <h3>Supporting Every Learner</h3>
-      <p>
-        Dedicated teachers, structured programs, and supportive systems ensure
-        no learner is left behind.
-      </p>
+      <p>Dedicated teachers, structured programs, and supportive systems ensure no learner is left behind.</p>
     </div>
   </section>
 
   <!-- ================= CALL TO ACTION ================= -->
-  <section class="content-section container">
+  <section class="content-section container" id="apply">
     <h2>Begin the Learning Journey</h2>
-    <p>
-      Discover how Cornerstones Vision Academy can provide your child with a
-      strong academic foundation and a values-driven education.
-    </p>
+    <p>Discover how Cornerstones Vision Academy provides a strong academic foundation and values-driven education.</p>
     <a href="admissions/how-to-apply.html" class="btn-primary">Apply Now</a>
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="main-footer">
+  <footer class="main-footer" role="contentinfo">
     <div class="container">
       <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
     </div>
