@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Primary School | Cornerstones Vision Academy</title>
-
   <meta name="description" content="Cornerstones Vision Academy Primary School provides a strong academic and moral foundation through engaging, learner-centered education." />
   <meta name="keywords" content="CVA primary school, foundational education, early learning, Cornerstones Vision Academy" />
   <meta name="author" content="Cornerstones Vision Academy" />
@@ -14,7 +13,7 @@
   <!-- ================= STYLES ================= -->
   <link rel="stylesheet" href="css/style.css" />
 
-  <!-- Icons -->
+  <!-- ================= ICONS ================= -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -26,10 +25,12 @@
 <body>
 
   <!-- ================= HEADER / NAV ================= -->
-  <header class="main-header">
-    <nav class="navbar">
+  <header class="main-header" role="banner">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
       <div class="logo">
-        <a href="index.html">Cornerstones Vision Academy</a>
+        <a href="index.html" aria-label="Cornerstones Vision Academy Home">
+          <img src="images/logo_full.png" alt="Cornerstones Vision Academy Logo">
+        </a>
       </div>
 
       <ul class="nav-menu">
@@ -63,28 +64,23 @@
 
         <li><a href="CVA-Bulletin/index.html">CVA Bulletin</a></li>
         <li><a href="contact.html">Contact</a></li>
-
-        <li class="staff-login disabled">
-          <a href="#">Staff Login</a>
-        </li>
+        <li class="staff-login disabled"><a href="#">Staff Login</a></li>
       </ul>
     </nav>
   </header>
 
   <!-- ================= HERO ================= -->
-  <section class="hero hero-primary" style="background-image: url('images/heroes/hero-3-primary.jpg');">
+  <section class="hero hero-primary" style="background-image: url('images/heroes/hero-3-primary.jpg');" aria-label="Primary School Highlights">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Primary School</h1>
-      <p>
-        Building strong academic and character foundations for lifelong learning.
-      </p>
+      <p>Building strong academic and character foundations for lifelong learning.</p>
     </div>
   </section>
 
   <!-- ================= OVERVIEW ================= -->
-  <section class="content-section container">
-    <h2>A Strong Start to Learning</h2>
+  <section class="content-section container" aria-labelledby="overview-heading">
+    <h2 id="overview-heading">A Strong Start to Learning</h2>
     <p>
       The Primary School at Cornerstones Vision Academy provides a safe,
       supportive, and engaging environment where young learners develop
@@ -99,7 +95,7 @@
   </section>
 
   <!-- ================= INTERLUDE ================= -->
-  <section class="interlude patterned-bg">
+  <section class="interlude patterned-bg" aria-label="Learning Through Care">
     <div class="container">
       <h3>Learning Through Care and Structure</h3>
       <p>
@@ -110,8 +106,8 @@
   </section>
 
   <!-- ================= CURRICULUM ================= -->
-  <section class="content-section container">
-    <h2>Our Curriculum</h2>
+  <section class="content-section container" aria-labelledby="curriculum-heading">
+    <h2 id="curriculum-heading">Our Curriculum</h2>
     <p>
       The primary curriculum at CVA is designed to develop well-rounded learners
       through a balanced focus on core subjects and enrichment activities.
@@ -127,7 +123,7 @@
   </section>
 
   <!-- ================= SUPPORT ================= -->
-  <section class="interlude textured-bg">
+  <section class="interlude textured-bg" aria-label="Support for Every Child">
     <div class="container">
       <h3>Supporting Every Child</h3>
       <p>
@@ -137,9 +133,9 @@
     </div>
   </section>
 
-  <!-- ================= CTA ================= -->
-  <section class="content-section container">
-    <h2>Join Our Primary School</h2>
+  <!-- ================= CALL TO ACTION ================= -->
+  <section class="content-section container" aria-labelledby="cta-heading">
+    <h2 id="cta-heading">Join Our Primary School</h2>
     <p>
       Give your child a strong start in a nurturing, values-driven learning
       environment.
@@ -148,7 +144,7 @@
   </section>
 
   <!-- ================= FOOTER ================= -->
-  <footer class="main-footer">
+  <footer class="main-footer" role="contentinfo">
     <div class="container">
       <p>&copy; 2026 Cornerstones Vision Academy. All Rights Reserved.</p>
     </div>
